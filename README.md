@@ -13,7 +13,7 @@ Static HTML / CSS / vanilla JS. No build step. Deployed on Vercel.
 ```
 .
 ├── index.html          Home
-├── portfolio.html      Products (BillXM, Vigilarx, Intelarx, Dr. Airia, AI Incubator)
+├── portfolio.html      Products (BillXM, Vigilarx, Intelarx, CClinic, AI Incubator)
 ├── services.html       Services + process
 ├── about.html          Studio, leadership, parent company
 ├── contact.html        Contact form (Formspree) + office info
@@ -51,5 +51,5 @@ The form on `contact.html` POSTs to Formspree. To activate:
 Defined in `css/style.css`:
 
 - Background: `#FAFAF5` (warm cream)
-- Product palette: `#2563EB` BillXM · `#374151` Vigilarx · `#059669` Intelarx · `#DB2777` Dr. Airia · `#D97706` AI Incubator
+- Product palette: `#2563EB` BillXM · `#374151` Vigilarx · `#059669` Intelarx · `#DB2777` CClinic · `#D97706` AI Incubator
 - Type: Outfit (headings) / DM Sans (body)
