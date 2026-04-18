@@ -40,11 +40,9 @@ Pushes to `main` auto-deploy to production on Vercel. Pushes to any other branch
 
 ## Contact form
 
-The form on `contact.html` POSTs to Formspree. To activate:
+The form on `contact.html` POSTs to Formspree (form ID `mzdyrgdk`). Submissions route to a Gmail inbox via Formspree's email notification.
 
-1. Create a form at [formspree.io](https://formspree.io)
-2. Replace `YOUR_FORM_ID` in `contact.html` line 32 (search `formspree.io/f/YOUR_FORM_ID`) with the real form ID.
-3. Commit & push — Vercel redeploys automatically.
+To change the destination email: log into formspree.io → CelesiumAI Contact form → Workflow → Email action → update destination.
 
 ## Design tokens
 
