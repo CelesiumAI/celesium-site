@@ -1,0 +1,9 @@
+{
+  "name": "celesium-ai-site",
+  "version": "2.0.0",
+  "private": true,
+  "description": "celesium.ai — applied AI studio brand site",
+  "dependencies": {
+    "resend": "^4.0.0"
+  }
+}

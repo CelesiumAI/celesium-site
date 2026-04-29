@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Approach — CelesiumAI</title>
+  <meta name="description" content="The CelesiumAI operating thesis: build, own, and operate purpose-built AI engines, with domain experts in the room from day one.">
+  <link rel="canonical" href="https://celesium.ai/approach.html">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <!-- ========== Top rail / nav ========== -->
+  <header class="rail">
+    <div class="rail__inner">
+      <a href="index.html" class="brand" aria-label="CelesiumAI home">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span>Celesium<em>AI</em></span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="portfolio.html">Portfolio</a>
+        <a href="approach.html" class="is-active">Approach</a>
+        <a href="leadership.html">Leadership</a>
+        <a href="contact.html" class="nav-cta">Get in touch</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========== Sub-hero ========== -->
+  <section class="subhero">
+    <div class="container">
+      <div class="subhero__inner">
+        <div>
+          <div class="eyebrow reveal" style="margin-bottom: 1.5rem;">— Approach · Studio model</div>
+          <h1 class="subhero__title reveal">
+            Build.<br><em>Own.</em><br>Operate.
+          </h1>
+        </div>
+        <p class="lede reveal" style="--reveal-delay: 200ms;">
+          We are a studio, not a contractor. Every engine we ship, we keep operating — that's how we know it works, and how it gets better.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Three pillars ========== -->
+  <section class="section">
+    <div class="container">
+      <div class="approach-steps">
+
+        <div class="astep reveal">
+          <div class="astep__num">— 01</div>
+          <h2 class="astep__title">Build with <em>operators</em> in the room.</h2>
+          <p class="astep__body">
+            Every engine is engineered alongside the people who will use it — clinicians for healthcare engines, defense attorneys for legal engines, research-security officers for compliance engines. Domain shapes architecture from day one. We don't translate requirements; we co-author them.
+          </p>
+        </div>
+
+        <div class="astep reveal">
+          <div class="astep__num">— 02</div>
+          <h2 class="astep__title">Own the <em>engineering</em>, not just the deck.</h2>
+          <p class="astep__body">
+            CelesiumAI retains operational ownership of every platform — the codebase, the data pipelines, the infrastructure, the production deployments. Not wrappers on third-party APIs. Not white-label resellers. Purpose-built systems we are accountable for, end to end.
+          </p>
+        </div>
+
+        <div class="astep reveal">
+          <div class="astep__num">— 03</div>
+          <h2 class="astep__title">Operate <em>at production scale</em>.</h2>
+          <p class="astep__body">
+            A platform we run is a platform we trust. Live products generate the operating data that compounds across the studio — patterns from BillXM inform Vigilarx; lessons from Vainture sharpen Concordia. The portfolio is the moat.
+          </p>
+        </div>
+
+        <div class="astep reveal">
+          <div class="astep__num">— 04</div>
+          <h2 class="astep__title">Backed by <em>patient capital</em>.</h2>
+          <p class="astep__body">
+            CelesiumAI is incubated under Celesium Capital — a Houston-based private equity firm operating on cycles, not quarters. PE-grade governance. Institutional relationships across the Texas Medical Center, Rice University, and Baylor College of Medicine. Capital that doesn't force premature exits.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Build/Own/Operate diagram ========== -->
+  <section class="section" style="background: var(--bg-elevated);">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="section-head__num reveal">— Studio model</div>
+          <h2 class="section-head__title reveal">A flywheel, <em>not a pipeline.</em></h2>
+        </div>
+        <p class="section-head__lede reveal">
+          Each engine we operate generates signal that informs the next. Production data trains better models. Domain expertise compounds. Live deployments build credibility that opens the next institutional door.
+        </p>
+      </div>
+
+      <div class="reveal" style="display: flex; justify-content: center;">
+        <div class="boo">
+          <svg viewBox="-300 -180 600 360" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                <path d="M0,0 L8,4 L0,8 Z" fill="var(--accent)"/>
+              </marker>
+            </defs>
+
+            <path class="boo__edge" d="M -180,80 Q -160,-40 0,-120" marker-end="url(#arrow)"/>
+            <path class="boo__edge" d="M 0,-120 Q 160,-40 180,80" marker-end="url(#arrow)"/>
+            <path class="boo__edge" d="M 180,80 Q 0,140 -180,80" marker-end="url(#arrow)"/>
+
+            <circle class="boo__pulse" r="5">
+              <animateMotion dur="9s" repeatCount="indefinite" rotate="auto">
+                <mpath href="#flow-path"/>
+              </animateMotion>
+            </circle>
+            <path id="flow-path"
+                  d="M -180,80 Q -160,-40 0,-120 Q 160,-40 180,80 Q 0,140 -180,80 Z"
+                  fill="none" stroke="none"/>
+
+            <g>
+              <circle class="boo__node-bg" cx="0"    cy="-120" r="58"/>
+              <text class="boo__node-label" x="0" y="-128">BUILD</text>
+              <text x="0" y="-110" text-anchor="middle"
+                    style="font-family:var(--font-mono); font-size:9px; fill:var(--ink-mute); letter-spacing:0.06em;">
+                with operators
+              </text>
+            </g>
+            <g>
+              <circle class="boo__node-bg" cx="180"  cy="80" r="58"/>
+              <text class="boo__node-label" x="180" y="72">OWN</text>
+              <text x="180" y="90" text-anchor="middle"
+                    style="font-family:var(--font-mono); font-size:9px; fill:var(--ink-mute); letter-spacing:0.06em;">
+                end to end
+              </text>
+            </g>
+            <g>
+              <circle class="boo__node-bg" cx="-180" cy="80" r="58"/>
+              <text class="boo__node-label" x="-180" y="72">OPERATE</text>
+              <text x="-180" y="90" text-anchor="middle"
+                    style="font-family:var(--font-mono); font-size:9px; fill:var(--ink-mute); letter-spacing:0.06em;">
+                at production
+              </text>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== What we don't do ========== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="section-head__num reveal">— Constraints</div>
+          <h2 class="section-head__title reveal">What we <em>don't do.</em></h2>
+        </div>
+        <p class="section-head__lede reveal">
+          A clear no is part of the work. The studio is deliberately narrow — these are the engagements we decline.
+        </p>
+      </div>
+
+      <div class="approach-steps">
+        <div class="astep reveal">
+          <div class="astep__num">— No</div>
+          <h2 class="astep__title">Generic <em>chatbot</em> wrappers.</h2>
+          <p class="astep__body">If the answer is a thin layer over a third-party API, the world doesn't need another one — and we don't want to operate one.</p>
+        </div>
+        <div class="astep reveal">
+          <div class="astep__num">— No</div>
+          <h2 class="astep__title">Hourly <em>consulting</em>.</h2>
+          <p class="astep__body">We are not a development shop renting engineers by the sprint. The studio's work is engagement-shaped, not invoice-shaped.</p>
+        </div>
+        <div class="astep reveal">
+          <div class="astep__num">— No</div>
+          <h2 class="astep__title">Demo-ware that <em>doesn't ship</em>.</h2>
+          <p class="astep__body">Every project is built to run in production. If it can't be operated, we shouldn't have built it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA ========== -->
+  <section class="posture">
+    <div class="container">
+      <blockquote class="posture__quote reveal">
+        Selective by <em>design.</em><br>
+        Operator-led <em>by structure.</em>
+      </blockquote>
+      <div class="posture__attribution reveal" style="display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap;">
+        <span>— Studio posture</span>
+        <a href="contact.html" class="btn btn--primary">
+          Start a conversation
+          <svg class="arrow" width="16" height="10" viewBox="0 0 16 10" fill="none" aria-hidden="true">
+            <path d="M1 5h13m0 0L10 1m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Footer ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="display">Celesium<em style="color:var(--accent); font-style:italic;">AI</em></div>
+          <p class="body">Applied AI studio incubated under Celesium Capital. We build, own, and operate.</p>
+        </div>
+        <div class="footer__col">
+          <div class="footer__col-title">Portfolio</div>
+          <ul>
+            <li><a href="https://billxm.com" target="_blank" rel="noopener"><span class="pip" style="background:var(--signal-live);"></span> BillXM</a></li>
+            <li><a href="https://vigilarx.com" target="_blank" rel="noopener"><span class="pip" style="background:var(--signal-live);"></span> Vigilarx</a></li>
+            <li><a href="https://intelarx.net" target="_blank" rel="noopener"><span class="pip" style="background:var(--signal-live);"></span> Intelarx</a></li>
+            <li><a href="portfolio.html"><span class="pip" style="background:var(--signal-dev);"></span> Vainture</a></li>
+            <li><a href="portfolio.html"><span class="pip" style="background:var(--signal-dev);"></span> CClinic</a></li>
+            <li><a href="portfolio.html"><span class="pip" style="background:var(--signal-dev);"></span> Concordia</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <div class="footer__col-title">Studio</div>
+          <ul>
+            <li><a href="approach.html">Approach</a></li>
+            <li><a href="leadership.html">Leadership</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <div class="footer__col-title">Houston, TX</div>
+          <ul>
+            <li style="color: var(--ink-soft); font-size: 0.92rem;">6222 Richmond, Ste 800<br>Houston, TX 77057</li>
+            <li><a href="https://celesium.com" target="_blank" rel="noopener">Celesium Capital ↗</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <div class="footer__legal">© <span data-year>2026</span> CelesiumAI LLC · All rights reserved</div>
+        <a href="#top" class="footer__back">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
