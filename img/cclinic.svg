@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 240" preserveAspectRatio="xMidYMid slice" style="width:100%;height:100%;display:block;">
+  <defs>
+    <linearGradient id="cc-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1E2748"/>
+      <stop offset="100%" stop-color="#0D1224"/>
+    </linearGradient>
+    <radialGradient id="cc-spot" cx="0.5" cy="0.5" r="0.7">
+      <stop offset="0%" stop-color="#22F0FF" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#22F0FF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="cc-fade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#22F0FF" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#22F0FF" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#22F0FF" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="240" fill="url(#cc-bg)"/>
+  <rect width="600" height="240" fill="url(#cc-spot)"/>
+
+  <!-- Background grid (medical paper) -->
+  <g stroke="#2E3865" stroke-width="0.4" opacity="0.4">
+    <!-- Horizontal grid -->
+    <line x1="0" y1="60" x2="600" y2="60"/>
+    <line x1="0" y1="120" x2="600" y2="120"/>
+    <line x1="0" y1="180" x2="600" y2="180"/>
+    <!-- Vertical ticks -->
+    <g opacity="0.5">
+      <line x1="60" y1="0" x2="60" y2="240"/>
+      <line x1="120" y1="0" x2="120" y2="240"/>
+      <line x1="180" y1="0" x2="180" y2="240"/>
+      <line x1="240" y1="0" x2="240" y2="240"/>
+      <line x1="300" y1="0" x2="300" y2="240"/>
+      <line x1="360" y1="0" x2="360" y2="240"/>
+      <line x1="420" y1="0" x2="420" y2="240"/>
+      <line x1="480" y1="0" x2="480" y2="240"/>
+      <line x1="540" y1="0" x2="540" y2="240"/>
+    </g>
+  </g>
+
+  <!-- ECG waveform -->
+  <path d="M 0,120 L 50,120 L 60,120 L 65,118 L 70,122 L 75,120 L 95,120
+           L 100,90 L 103,150 L 106,80 L 110,160 L 115,118 L 120,120
+           L 160,120 L 170,120 L 175,116 L 180,124 L 185,120 L 215,120
+           L 220,90 L 223,150 L 226,80 L 230,160 L 235,118 L 240,120
+           L 280,120 L 290,120 L 295,118 L 300,122 L 305,120 L 335,120
+           L 340,90 L 343,150 L 346,80 L 350,160 L 355,118 L 360,120
+           L 400,120 L 410,120 L 415,116 L 420,124 L 425,120 L 455,120
+           L 460,90 L 463,150 L 466,80 L 470,160 L 475,118 L 480,120
+           L 600,120"
+        fill="none" stroke="#22F0FF" stroke-width="1.6" stroke-linejoin="round"/>
+
+  <!-- Glow under waveform -->
+  <path d="M 0,120 L 50,120 L 60,120 L 65,118 L 70,122 L 75,120 L 95,120
+           L 100,90 L 103,150 L 106,80 L 110,160 L 115,118 L 120,120
+           L 160,120 L 170,120 L 175,116 L 180,124 L 185,120 L 215,120
+           L 220,90 L 223,150 L 226,80 L 230,160 L 235,118 L 240,120
+           L 280,120 L 290,120 L 295,118 L 300,122 L 305,120 L 335,120
+           L 340,90 L 343,150 L 346,80 L 350,160 L 355,118 L 360,120
+           L 400,120 L 410,120 L 415,116 L 420,124 L 425,120 L 455,120
+           L 460,90 L 463,150 L 466,80 L 470,160 L 475,118 L 480,120
+           L 600,120"
+        fill="none" stroke="#22F0FF" stroke-width="6" opacity="0.18" filter="blur(4px)"/>
+
+  <!-- Active scan dot traveling -->
+  <circle r="4" fill="#FFFFFF">
+    <animateMotion dur="6s" repeatCount="indefinite">
+      <mpath href="#cc-trace"/>
+    </animateMotion>
+  </circle>
+  <path id="cc-trace"
+        d="M 0,120 L 100,90 L 103,150 L 106,80 L 110,160 L 115,118 L 600,120"
+        fill="none" stroke="none"/>
+
+  <!-- Top-left telemetry -->
+  <g transform="translate(40, 30)" font-family="ui-monospace,monospace" fill="#DCE0EE">
+    <text x="0" y="0" font-size="10" letter-spacing="0.12em" fill="#22F0FF">CLINICAL ENGINE</text>
+    <text x="0" y="18" font-size="9" fill="#8E96B5">Calgary–Cambridge model</text>
+  </g>
+
+  <!-- Bottom-left vitals -->
+  <g transform="translate(40, 200)" font-family="ui-monospace,monospace" font-size="9">
+    <g>
+      <text x="0" y="0" fill="#8E96B5">HR</text>
+      <text x="22" y="0" fill="#FFFFFF" font-weight="500">72</text>
+      <text x="42" y="0" fill="#8E96B5" font-size="8">BPM</text>
+    </g>
+    <g transform="translate(80, 0)">
+      <text x="0" y="0" fill="#8E96B5">SPO2</text>
+      <text x="32" y="0" fill="#FFFFFF" font-weight="500">98</text>
+      <text x="52" y="0" fill="#8E96B5" font-size="8">%</text>
+    </g>
+    <g transform="translate(150, 0)">
+      <text x="0" y="0" fill="#8E96B5">BP</text>
+      <text x="20" y="0" fill="#FFFFFF" font-weight="500">120/80</text>
+    </g>
+  </g>
+
+  <!-- Right-side: AI doctors badge -->
+  <g transform="translate(440, 30)" font-family="ui-monospace,monospace">
+    <text x="0" y="0" font-size="10" letter-spacing="0.12em" fill="#22F0FF" text-anchor="start">AI PHYSICIANS</text>
+
+    <g transform="translate(0, 22)">
+      <circle cx="6" cy="-3" r="4" fill="#22F0FF" opacity="0.3" stroke="#22F0FF"/>
+      <text x="18" y="0" font-size="10.5" fill="#FFFFFF">Dr. Bellai</text>
+      <text x="18" y="12" font-size="8" fill="#8E96B5">Internal medicine</text>
+    </g>
+    <g transform="translate(0, 56)">
+      <circle cx="6" cy="-3" r="4" fill="#22F0FF" opacity="0.3" stroke="#22F0FF"/>
+      <text x="18" y="0" font-size="10.5" fill="#FFFFFF">Dr. Graison</text>
+      <text x="18" y="12" font-size="8" fill="#8E96B5">Primary care</text>
+    </g>
+
+    <line x1="0" y1="92" x2="120" y2="92" stroke="#2E3865" stroke-width="1"/>
+
+    <g transform="translate(0, 110)">
+      <text x="0" y="0" font-size="9" letter-spacing="0.1em" fill="#FFC661">IN DEVELOPMENT</text>
+      <text x="0" y="14" font-size="8" fill="#8E96B5">Phone · in-person</text>
+    </g>
+  </g>
+</svg>

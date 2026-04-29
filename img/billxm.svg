@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 240" preserveAspectRatio="xMidYMid slice" style="width:100%;height:100%;display:block;">
+  <defs>
+    <linearGradient id="bx-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1E2748"/>
+      <stop offset="100%" stop-color="#0D1224"/>
+    </linearGradient>
+    <linearGradient id="bx-glow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#22F0FF" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#22F0FF" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="bx-spot" cx="0.85" cy="0.2" r="0.7">
+      <stop offset="0%" stop-color="#22F0FF" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#22F0FF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="600" height="240" fill="url(#bx-bg)"/>
+  <rect width="600" height="240" fill="url(#bx-spot)"/>
+
+  <!-- Stylized invoice/document grid -->
+  <g transform="translate(60, 30)" opacity="0.92">
+    <!-- Document header -->
+    <rect x="0" y="0" width="280" height="28" rx="2" fill="#2E3865" opacity="0.5"/>
+    <rect x="8" y="9" width="80" height="10" rx="1" fill="#8E96B5" opacity="0.7"/>
+    <rect x="240" y="9" width="32" height="10" rx="1" fill="#8E96B5" opacity="0.5"/>
+
+    <!-- Line items with stylized billing rows -->
+    <g font-family="ui-monospace,monospace" font-size="9" fill="#DCE0EE">
+      <!-- Row 1 — normal -->
+      <rect x="0" y="40" width="280" height="20" fill="#2E3865" opacity="0.18"/>
+      <rect x="8" y="46" width="120" height="8" rx="1" fill="#5A6182"/>
+      <rect x="200" y="46" width="40" height="8" rx="1" fill="#8E96B5"/>
+      <rect x="248" y="46" width="24" height="8" rx="1" fill="#5A6182"/>
+
+      <!-- Row 2 — normal -->
+      <rect x="0" y="64" width="280" height="20" fill="#2E3865" opacity="0.18"/>
+      <rect x="8" y="70" width="100" height="8" rx="1" fill="#5A6182"/>
+      <rect x="200" y="70" width="40" height="8" rx="1" fill="#8E96B5"/>
+      <rect x="248" y="70" width="24" height="8" rx="1" fill="#5A6182"/>
+
+      <!-- Row 3 — FLAGGED OVERCHARGE -->
+      <rect x="0" y="88" width="280" height="20" fill="#22F0FF" opacity="0.12"/>
+      <rect x="8" y="94" width="140" height="8" rx="1" fill="#22F0FF" opacity="0.65"/>
+      <rect x="200" y="94" width="40" height="8" rx="1" fill="#22F0FF"/>
+      <rect x="248" y="94" width="24" height="8" rx="1" fill="#22F0FF"/>
+      <!-- Flag indicator -->
+      <circle cx="294" cy="98" r="4" fill="#22F0FF">
+        <animate attributeName="opacity" values="1;0.3;1" dur="2.4s" repeatCount="indefinite"/>
+      </circle>
+      <line x1="288" y1="98" x2="298" y2="98" stroke="#22F0FF" stroke-width="0.5" opacity="0.4"/>
+
+      <!-- Row 4 — normal -->
+      <rect x="0" y="112" width="280" height="20" fill="#2E3865" opacity="0.18"/>
+      <rect x="8" y="118" width="90" height="8" rx="1" fill="#5A6182"/>
+      <rect x="200" y="118" width="40" height="8" rx="1" fill="#8E96B5"/>
+      <rect x="248" y="118" width="24" height="8" rx="1" fill="#5A6182"/>
+
+      <!-- Row 5 — FLAGGED BUNDLING -->
+      <rect x="0" y="136" width="280" height="20" fill="#22F0FF" opacity="0.10"/>
+      <rect x="8" y="142" width="160" height="8" rx="1" fill="#22F0FF" opacity="0.55"/>
+      <rect x="200" y="142" width="40" height="8" rx="1" fill="#22F0FF" opacity="0.85"/>
+      <rect x="248" y="142" width="24" height="8" rx="1" fill="#22F0FF" opacity="0.85"/>
+      <circle cx="294" cy="146" r="4" fill="#22F0FF" opacity="0.6">
+        <animate attributeName="opacity" values="0.6;0.2;0.6" dur="2.8s" repeatCount="indefinite"/>
+      </circle>
+
+      <!-- Total row -->
+      <line x1="0" y1="170" x2="280" y2="170" stroke="#2E3865" stroke-width="1"/>
+      <rect x="200" y="178" width="72" height="12" rx="1" fill="#FFFFFF" opacity="0.85"/>
+    </g>
+  </g>
+
+  <!-- Right side annotation glyphs -->
+  <g transform="translate(420, 50)" font-family="ui-monospace,monospace" fill="#22F0FF">
+    <text x="0" y="14" font-size="10" letter-spacing="0.12em" opacity="0.8">DETECTED</text>
+    <text x="0" y="42" font-size="28" font-weight="600">$28.4K</text>
+    <text x="0" y="58" font-size="9" letter-spacing="0.08em" fill="#8E96B5">OVERCHARGE</text>
+
+    <line x1="0" y1="78" x2="120" y2="78" stroke="#2E3865" stroke-width="1"/>
+
+    <text x="0" y="98" font-size="10" letter-spacing="0.12em" opacity="0.8" fill="#22F0FF">CMS · NCCI · FAIR</text>
+    <text x="0" y="116" font-size="9" fill="#8E96B5">3 RULE SETS</text>
+
+    <line x1="0" y1="138" x2="120" y2="138" stroke="#2E3865" stroke-width="1"/>
+
+    <text x="0" y="158" font-size="9" letter-spacing="0.12em" fill="#4DEAA8">2 / 5 LINES</text>
+    <text x="0" y="172" font-size="9" fill="#8E96B5">FLAGGED</text>
+  </g>
+</svg>

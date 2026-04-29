@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 240" preserveAspectRatio="xMidYMid slice" style="width:100%;height:100%;display:block;">
+  <defs>
+    <linearGradient id="vx-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1E2748"/>
+      <stop offset="100%" stop-color="#0D1224"/>
+    </linearGradient>
+    <radialGradient id="vx-spot" cx="0.3" cy="0.5" r="0.6">
+      <stop offset="0%" stop-color="#22F0FF" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#22F0FF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="vx-shield" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#22F0FF" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#00B8D4" stop-opacity="0.2"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="240" fill="url(#vx-bg)"/>
+  <rect width="600" height="240" fill="url(#vx-spot)"/>
+
+  <!-- Concentric scan rings -->
+  <g transform="translate(180, 120)" fill="none" stroke="#2E3865">
+    <circle r="40" stroke-width="1" opacity="0.4"/>
+    <circle r="70" stroke-width="0.5" opacity="0.3" stroke-dasharray="3 4"/>
+    <circle r="100" stroke-width="0.5" opacity="0.2" stroke-dasharray="2 6"/>
+    <circle r="130" stroke-width="0.5" opacity="0.15" stroke-dasharray="1 8"/>
+  </g>
+
+  <!-- Sweep beam -->
+  <g transform="translate(180, 120)">
+    <path d="M 0,0 L 130,0 A 130,130 0 0,1 91,91 z" fill="#22F0FF" opacity="0.08">
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="12s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Hex shield (faceted geometric) -->
+  <g transform="translate(180, 120)">
+    <polygon points="0,-50 43,-25 43,25 0,50 -43,25 -43,-25" fill="url(#vx-shield)" stroke="#22F0FF" stroke-width="1.5" opacity="0.95"/>
+    <polygon points="0,-50 43,-25 43,25 0,50 -43,25 -43,-25" fill="none" stroke="#22F0FF" stroke-width="0.4" opacity="0.6">
+      <animate attributeName="stroke-width" values="0.4;1.2;0.4" dur="3s" repeatCount="indefinite"/>
+    </polygon>
+    <!-- Internal facets -->
+    <line x1="0" y1="-50" x2="0" y2="50" stroke="#0D1224" stroke-width="0.5" opacity="0.6"/>
+    <line x1="-43" y1="-25" x2="43" y2="25" stroke="#0D1224" stroke-width="0.5" opacity="0.6"/>
+    <line x1="-43" y1="25" x2="43" y2="-25" stroke="#0D1224" stroke-width="0.5" opacity="0.6"/>
+    <!-- Center pulse -->
+    <circle r="3" fill="#FFFFFF"/>
+  </g>
+
+  <!-- Detection nodes around perimeter -->
+  <g transform="translate(180, 120)">
+    <g transform="translate(100, -65)">
+      <circle r="3" fill="#4DEAA8"/>
+      <circle r="5" fill="none" stroke="#4DEAA8" stroke-width="0.5" opacity="0.6">
+        <animate attributeName="r" values="3;10;3" dur="2.4s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.8;0;0.8" dur="2.4s" repeatCount="indefinite"/>
+      </circle>
+      <line x1="-50" y1="40" x2="-3" y2="2" stroke="#4DEAA8" stroke-width="0.4" opacity="0.4"/>
+    </g>
+    <g transform="translate(115, 30)">
+      <circle r="2.5" fill="#22F0FF"/>
+      <line x1="-72" y1="-5" x2="-2" y2="0" stroke="#22F0FF" stroke-width="0.4" opacity="0.5"/>
+    </g>
+    <g transform="translate(-95, 75)">
+      <circle r="2.5" fill="#FFC661"/>
+      <circle r="5" fill="none" stroke="#FFC661" stroke-width="0.5" opacity="0.5">
+        <animate attributeName="r" values="3;9;3" dur="3.2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.7;0;0.7" dur="3.2s" repeatCount="indefinite"/>
+      </circle>
+      <line x1="50" y1="-50" x2="2" y2="-2" stroke="#FFC661" stroke-width="0.4" opacity="0.4"/>
+    </g>
+    <g transform="translate(-100, -50)">
+      <circle r="2.5" fill="#22F0FF" opacity="0.7"/>
+      <line x1="55" y1="35" x2="2" y2="2" stroke="#22F0FF" stroke-width="0.4" opacity="0.3"/>
+    </g>
+  </g>
+
+  <!-- Right-side telemetry -->
+  <g transform="translate(390, 50)" font-family="ui-monospace,monospace">
+    <text x="0" y="14" font-size="10" letter-spacing="0.12em" fill="#22F0FF" opacity="0.8">NSPM-33</text>
+    <text x="0" y="32" font-size="22" font-weight="500" fill="#FFFFFF">COMPLIANT</text>
+
+    <line x1="0" y1="50" x2="160" y2="50" stroke="#2E3865" stroke-width="1"/>
+
+    <g transform="translate(0, 70)" font-size="10">
+      <circle cx="6" cy="-3" r="3" fill="#4DEAA8"/>
+      <text x="18" y="0" fill="#DCE0EE">Person screening</text>
+      <text x="130" y="0" fill="#8E96B5" text-anchor="end">PASS</text>
+    </g>
+    <g transform="translate(0, 92)" font-size="10">
+      <circle cx="6" cy="-3" r="3" fill="#4DEAA8"/>
+      <text x="18" y="0" fill="#DCE0EE">Foreign influence</text>
+      <text x="130" y="0" fill="#8E96B5" text-anchor="end">PASS</text>
+    </g>
+    <g transform="translate(0, 114)" font-size="10">
+      <circle cx="6" cy="-3" r="3" fill="#FFC661"/>
+      <text x="18" y="0" fill="#DCE0EE">Export controls</text>
+      <text x="130" y="0" fill="#8E96B5" text-anchor="end">REVIEW</text>
+    </g>
+    <g transform="translate(0, 136)" font-size="10">
+      <circle cx="6" cy="-3" r="3" fill="#4DEAA8"/>
+      <text x="18" y="0" fill="#DCE0EE">Disclosure trail</text>
+      <text x="130" y="0" fill="#8E96B5" text-anchor="end">PASS</text>
+    </g>
+
+    <line x1="0" y1="156" x2="160" y2="156" stroke="#2E3865" stroke-width="1"/>
+    <text x="0" y="174" font-size="9" letter-spacing="0.1em" fill="#8E96B5">RICE UNIVERSITY · LIVE</text>
+  </g>
+</svg>
