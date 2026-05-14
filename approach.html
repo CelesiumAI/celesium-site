@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Approach — CelesiumAI</title>
-  <meta name="description" content="The CelesiumAI operating thesis: build, own, and operate purpose-built AI engines, with domain experts in the room from day one.">
+  <meta name="description" content="The CelesiumAI operating thesis: build and operate purpose-built AI engines, with domain experts in the room from day one.">
   <link rel="canonical" href="https://celesium.ai/approach.html">
   <link rel="stylesheet" href="css/main.css">
 </head>
@@ -33,7 +33,7 @@
         <div>
           <div class="eyebrow reveal" style="margin-bottom: 1.5rem;">— Approach · Studio model</div>
           <h1 class="subhero__title reveal">
-            Build.<br><em>Own.</em><br>Operate.
+            Build.<br><em>Operate.</em>
           </h1>
         </div>
         <p class="lede reveal" style="--reveal-delay: 200ms;">
@@ -58,9 +58,9 @@
 
         <div class="astep reveal">
           <div class="astep__num">— 02</div>
-          <h2 class="astep__title">Own the <em>engineering</em>, not just the deck.</h2>
+          <h2 class="astep__title">Build the <em>engineering</em>, not just the deck.</h2>
           <p class="astep__body">
-            CelesiumAI retains operational ownership of every platform — the codebase, the data pipelines, the infrastructure, the production deployments. Not wrappers on third-party APIs. Not white-label resellers. Purpose-built systems we are accountable for, end to end.
+            CelesiumAI engineers every platform end to end — the codebase, the data pipelines, the infrastructure, the production deployments. Not wrappers on third-party APIs. Not white-label resellers. Purpose-built systems we are accountable for, end to end.
           </p>
         </div>
 
@@ -84,7 +84,7 @@
     </div>
   </section>
 
-  <!-- ========== Build/Own/Operate diagram ========== -->
+  <!-- ========== Build/Operate diagram ========== -->
   <section class="section" style="background: var(--bg-elevated);">
     <div class="container">
       <div class="section-head">
@@ -106,39 +106,32 @@
               </marker>
             </defs>
 
-            <path class="boo__edge" d="M -180,80 Q -160,-40 0,-120" marker-end="url(#arrow)"/>
-            <path class="boo__edge" d="M 0,-120 Q 160,-40 180,80" marker-end="url(#arrow)"/>
-            <path class="boo__edge" d="M 180,80 Q 0,140 -180,80" marker-end="url(#arrow)"/>
+            <!-- Forward edge: BUILD -> OPERATE -->
+            <path class="boo__edge" d="M -90,-30 Q 0,-90 90,-30" marker-end="url(#arrow)"/>
+            <!-- Return edge: OPERATE -> BUILD (feedback signal) -->
+            <path class="boo__edge" d="M 90,30 Q 0,90 -90,30" marker-end="url(#arrow)"/>
 
             <circle class="boo__pulse" r="5">
-              <animateMotion dur="9s" repeatCount="indefinite" rotate="auto">
+              <animateMotion dur="7s" repeatCount="indefinite" rotate="auto">
                 <mpath href="#flow-path"/>
               </animateMotion>
             </circle>
             <path id="flow-path"
-                  d="M -180,80 Q -160,-40 0,-120 Q 160,-40 180,80 Q 0,140 -180,80 Z"
+                  d="M -90,-30 Q 0,-90 90,-30 Q 130,0 90,30 Q 0,90 -90,30 Q -130,0 -90,-30 Z"
                   fill="none" stroke="none"/>
 
             <g>
-              <circle class="boo__node-bg" cx="0"    cy="-120" r="58"/>
-              <text class="boo__node-label" x="0" y="-128">BUILD</text>
-              <text x="0" y="-110" text-anchor="middle"
+              <circle class="boo__node-bg" cx="-150" cy="0" r="58"/>
+              <text class="boo__node-label" x="-150" y="-8">BUILD</text>
+              <text x="-150" y="10" text-anchor="middle"
                     style="font-family:var(--font-mono); font-size:9px; fill:var(--ink-mute); letter-spacing:0.06em;">
                 with operators
               </text>
             </g>
             <g>
-              <circle class="boo__node-bg" cx="180"  cy="80" r="58"/>
-              <text class="boo__node-label" x="180" y="72">OWN</text>
-              <text x="180" y="90" text-anchor="middle"
-                    style="font-family:var(--font-mono); font-size:9px; fill:var(--ink-mute); letter-spacing:0.06em;">
-                end to end
-              </text>
-            </g>
-            <g>
-              <circle class="boo__node-bg" cx="-180" cy="80" r="58"/>
-              <text class="boo__node-label" x="-180" y="72">OPERATE</text>
-              <text x="-180" y="90" text-anchor="middle"
+              <circle class="boo__node-bg" cx="150" cy="0" r="58"/>
+              <text class="boo__node-label" x="150" y="-8">OPERATE</text>
+              <text x="150" y="10" text-anchor="middle"
                     style="font-family:var(--font-mono); font-size:9px; fill:var(--ink-mute); letter-spacing:0.06em;">
                 at production
               </text>
@@ -207,7 +200,7 @@
       <div class="footer__grid">
         <div class="footer__brand">
           <div class="display">Celesium<em style="color:var(--accent); font-style:italic;">AI</em></div>
-          <p class="body">Applied AI studio incubated under Celesium Capital. We build, own, and operate.</p>
+          <p class="body">Applied AI studio incubated under Celesium Capital. We build and operate.</p>
         </div>
         <div class="footer__col">
           <div class="footer__col-title">Portfolio</div>
@@ -215,7 +208,8 @@
             <li><a href="https://billxm.com" target="_blank" rel="noopener"><span class="pip" style="background:var(--signal-live);"></span> BillXM</a></li>
             <li><a href="https://vigilarx.com" target="_blank" rel="noopener"><span class="pip" style="background:var(--signal-live);"></span> Vigilarx</a></li>
             <li><a href="https://intelarx.net" target="_blank" rel="noopener"><span class="pip" style="background:var(--signal-live);"></span> Intelarx</a></li>
-            <li><a href="portfolio.html"><span class="pip" style="background:var(--signal-dev);"></span> Vainture</a></li>
+            <li><a href="https://vainture.com" target="_blank" rel="noopener"><span class="pip" style="background:var(--signal-live);"></span> Vainture</a></li>
+            <li><a href="https://quarare.com" target="_blank" rel="noopener"><span class="pip" style="background:var(--signal-live);"></span> Quarare</a></li>
             <li><a href="portfolio.html"><span class="pip" style="background:var(--signal-dev);"></span> CClinic</a></li>
             <li><a href="portfolio.html"><span class="pip" style="background:var(--signal-dev);"></span> Concordia</a></li>
           </ul>

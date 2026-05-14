@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CelesiumAI — Applied AI Studio</title>
-  <meta name="description" content="CelesiumAI is an applied AI studio that builds, owns, and operates purpose-built artificial intelligence platforms in healthcare, legal, and institutional intelligence.">
+  <meta name="description" content="CelesiumAI is an applied AI studio that builds and operates purpose-built artificial intelligence platforms in healthcare, legal, and institutional intelligence.">
   <link rel="canonical" href="https://celesium.ai/">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://celesium.ai/">
   <meta property="og:title" content="CelesiumAI — Applied AI Studio">
-  <meta property="og:description" content="An applied AI studio that builds, owns, and operates purpose-built AI platforms.">
+  <meta property="og:description" content="An applied AI studio that builds and operates purpose-built AI platforms.">
   <meta property="og:site_name" content="CelesiumAI">
   <link rel="stylesheet" href="css/main.css">
 </head>
@@ -41,7 +41,7 @@
           </div>
 
           <h1 class="display hero__headline reveal">
-            We build, own,<br>
+            We build<br>
             and <em>operate</em><br>
             AI platforms.
           </h1>
@@ -74,11 +74,12 @@
               <circle cx="0" cy="0" r="220" fill="none" stroke="var(--bg-line)" stroke-width="1" opacity="0.2" stroke-dasharray="2 6"/>
 
               <line class="network__edge" x1="0" y1="0" x2="0"    y2="-180"/>
-              <line class="network__edge" x1="0" y1="0" x2="155"  y2="-90"/>
-              <line class="network__edge" x1="0" y1="0" x2="155"  y2="90"/>
-              <line class="network__edge" x1="0" y1="0" x2="0"    y2="180"/>
-              <line class="network__edge" x1="0" y1="0" x2="-155" y2="90"/>
-              <line class="network__edge" x1="0" y1="0" x2="-155" y2="-90"/>
+              <line class="network__edge" x1="0" y1="0" x2="141"  y2="-112"/>
+              <line class="network__edge" x1="0" y1="0" x2="175"  y2="40"/>
+              <line class="network__edge" x1="0" y1="0" x2="78"   y2="162"/>
+              <line class="network__edge" x1="0" y1="0" x2="-78"  y2="162"/>
+              <line class="network__edge" x1="0" y1="0" x2="-175" y2="40"/>
+              <line class="network__edge" x1="0" y1="0" x2="-141" y2="-112"/>
 
               <g>
                 <circle class="network__center-ring" cx="0" cy="0" r="32"/>
@@ -96,32 +97,37 @@
                 <text class="network__node-label" x="0" y="-162" style="font-size:8px; fill:var(--signal-live);">LIVE</text>
               </g>
               <g class="network__node">
-                <circle class="network__node-bg" cx="155" cy="-90" r="32"/>
-                <text class="network__node-label" x="155" y="-86">Vigilarx</text>
-                <text class="network__node-label" x="155" y="-72" style="font-size:8px; fill:var(--signal-live);">LIVE</text>
+                <circle class="network__node-bg" cx="141" cy="-112" r="32"/>
+                <text class="network__node-label" x="141" y="-108">Vigilarx</text>
+                <text class="network__node-label" x="141" y="-94" style="font-size:8px; fill:var(--signal-live);">LIVE</text>
               </g>
               <g class="network__node">
-                <circle class="network__node-bg" cx="155" cy="90" r="32"/>
-                <text class="network__node-label" x="155" y="94">Intelarx</text>
-                <text class="network__node-label" x="155" y="108" style="font-size:8px; fill:var(--signal-live);">LIVE</text>
+                <circle class="network__node-bg" cx="175" cy="40" r="32"/>
+                <text class="network__node-label" x="175" y="44">Intelarx</text>
+                <text class="network__node-label" x="175" y="58" style="font-size:8px; fill:var(--signal-live);">LIVE</text>
               </g>
               <g class="network__node">
-                <circle class="network__node-bg" cx="0" cy="180" r="32"/>
-                <text class="network__node-label" x="0" y="184">Vainture</text>
-                <text class="network__node-label" x="0" y="198" style="font-size:8px; fill:var(--signal-live);">LIVE</text>
+                <circle class="network__node-bg" cx="78" cy="162" r="32"/>
+                <text class="network__node-label" x="78" y="166">Vainture</text>
+                <text class="network__node-label" x="78" y="180" style="font-size:8px; fill:var(--signal-live);">LIVE</text>
               </g>
               <g class="network__node">
-                <circle class="network__node-bg" cx="-155" cy="90" r="32"/>
-                <text class="network__node-label" x="-155" y="94">CClinic</text>
-                <text class="network__node-label" x="-155" y="108" style="font-size:8px; fill:var(--signal-dev);">DEV</text>
+                <circle class="network__node-bg" cx="-78" cy="162" r="32"/>
+                <text class="network__node-label" x="-78" y="166">Quarare</text>
+                <text class="network__node-label" x="-78" y="180" style="font-size:8px; fill:var(--signal-live);">LIVE</text>
               </g>
               <g class="network__node">
-                <circle class="network__node-bg" cx="-155" cy="-90" r="32"/>
-                <text class="network__node-label" x="-155" y="-86">Concordia</text>
-                <text class="network__node-label" x="-155" y="-72" style="font-size:8px; fill:var(--signal-dev);">DEV</text>
+                <circle class="network__node-bg" cx="-175" cy="40" r="32"/>
+                <text class="network__node-label" x="-175" y="44">CClinic</text>
+                <text class="network__node-label" x="-175" y="58" style="font-size:8px; fill:var(--signal-dev);">DEV</text>
+              </g>
+              <g class="network__node">
+                <circle class="network__node-bg" cx="-141" cy="-112" r="32"/>
+                <text class="network__node-label" x="-141" y="-108">Concordia</text>
+                <text class="network__node-label" x="-141" y="-94" style="font-size:8px; fill:var(--signal-dev);">DEV</text>
               </g>
             </svg>
-            <div class="network__caption">Six engines · One studio</div>
+            <div class="network__caption">Seven engines · One studio</div>
           </div>
         </div>
 
@@ -151,7 +157,7 @@
           <h2 class="section-head__title reveal">What we <em>operate</em></h2>
         </div>
         <p class="section-head__lede reveal">
-          Each platform is a standalone subsidiary — engineered, owned, and operated under CelesiumAI. We don't ship demos; we run live products.
+          Each platform is a standalone subsidiary — engineered and operated under CelesiumAI. We don't ship demos; we run live products.
         </p>
       </div>
 
@@ -225,11 +231,28 @@
           </div>
         </a>
 
+        <a class="pcard reveal" href="https://quarare.com" target="_blank" rel="noopener">
+          <div class="pcard__visual"><img src="img/quarare.svg" alt="" loading="lazy"></div>
+          <div class="pcard__body">
+            <div class="pcard__head">
+              <span class="pcard__status pcard__status--live"><span class="pip"></span>Live</span>
+              <span class="pcard__url">quarare.com ↗</span>
+            </div>
+            <h3 class="pcard__name">Quarare</h3>
+            <div class="pcard__tag">Legal · Expert Witness Intelligence</div>
+            <p class="pcard__desc">Expert witness evidence platform — Daubert-grade reliability scoring, insights, and audit trails for litigation support.</p>
+            <div class="pcard__foot">
+              <span class="pcard__metric">Live · Phase 1 marketing complete</span>
+              <span class="pcard__arrow" aria-hidden="true">↗</span>
+            </div>
+          </div>
+        </a>
+
       </div>
 
       <div class="reveal" style="margin-top: 2.5rem; text-align: right;">
         <a href="portfolio.html" class="btn btn--ghost">
-          See all six engines
+          See all seven engines
           <svg class="arrow" width="16" height="10" viewBox="0 0 16 10" fill="none" aria-hidden="true">
             <path d="M1 5h13m0 0L10 1m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
           </svg>
@@ -277,7 +300,7 @@
       <div class="footer__grid">
         <div class="footer__brand">
           <div class="display">Celesium<em style="color:var(--accent); font-style:italic;">AI</em></div>
-          <p class="body">Applied AI studio incubated under Celesium Capital. We build, own, and operate.</p>
+          <p class="body">Applied AI studio incubated under Celesium Capital. We build and operate.</p>
         </div>
 
         <div class="footer__col">
@@ -287,6 +310,7 @@
             <li><a href="https://vigilarx.com" target="_blank" rel="noopener"><span class="pip" style="background:var(--signal-live);"></span> Vigilarx</a></li>
             <li><a href="https://intelarx.net" target="_blank" rel="noopener"><span class="pip" style="background:var(--signal-live);"></span> Intelarx</a></li>
             <li><a href="https://vainture.com" target="_blank" rel="noopener"><span class="pip" style="background:var(--signal-live);"></span> Vainture</a></li>
+            <li><a href="https://quarare.com" target="_blank" rel="noopener"><span class="pip" style="background:var(--signal-live);"></span> Quarare</a></li>
             <li><a href="portfolio.html"><span class="pip" style="background:var(--signal-dev);"></span> CClinic</a></li>
             <li><a href="portfolio.html"><span class="pip" style="background:var(--signal-dev);"></span> Concordia</a></li>
           </ul>
