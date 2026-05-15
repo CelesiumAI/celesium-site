@@ -285,10 +285,37 @@ body::before {
 .nav-cta.is-active { color: #061018 !important; }
 
 @media (max-width: 720px) {
-  .nav { gap: 1rem; }
-  .nav a:not(.nav-cta) { display: none; }
-  .nav a.nav-cta { display: inline-block; }
+  .rail { padding: 0 1rem; }
+  .rail__inner { gap: 0.75rem; }
+  .brand { font-size: 0.95rem; gap: 0.5rem; }
+  .brand__mark { width: 18px; height: 18px; }
+  .nav { gap: 0.9rem; }
+  .nav a {
+    font-size: 0.7rem;
+    letter-spacing: 0.02em;
+    padding: 0.2rem 0;
+  }
+  .nav-cta {
+    font-size: 0.7rem;
+    padding: 0.45rem 0.7rem;
+    letter-spacing: 0.04em;
+  }
   .nav__home { display: inline-block !important; }
+}
+
+@media (max-width: 420px) {
+  .nav { gap: 0.6rem; }
+  .nav a { font-size: 0.62rem; }
+  .nav-cta { font-size: 0.62rem; padding: 0.4rem 0.55rem; }
+  .brand { font-size: 0.85rem; }
+  .brand em { display: inline; }
+}
+
+.nav-cta__full { display: inline; }
+.nav-cta__short { display: none; }
+@media (max-width: 420px) {
+  .nav-cta__full { display: none; }
+  .nav-cta__short { display: inline; }
 }
 
 .hero {
@@ -883,6 +910,16 @@ body::before {
   font-size: 0.92rem;
   line-height: 1.55;
 }
+.person__link {
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--dur-fast) var(--ease-out);
+  white-space: nowrap;
+}
+.person__link:hover { border-bottom-color: var(--accent); }
 
 .marquee {
   overflow: hidden;
