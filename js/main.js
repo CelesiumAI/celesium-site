@@ -5,31 +5,44 @@
 (() => {
   'use strict';
 
+  document.documentElement.classList.add('js');
+
   /* ---------- Scroll-triggered reveals ---------- */
   const revealEls = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window && revealEls.length) {
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((e) => {
-        if (e.isIntersecting) {
-          e.target.classList.add('is-in');
-          io.unobserve(e.target);
+  try {
+    if ('IntersectionObserver' in window && revealEls.length) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add('is-in');
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.08, rootMargin: '0px' });
+      revealEls.forEach((el, i) => {
+        // Auto-stagger if no explicit delay set
+        if (!el.style.getPropertyValue('--reveal-delay')) {
+          const sib = el.parentElement && el.parentElement.querySelectorAll(':scope > .reveal');
+          if (sib && sib.length > 1) {
+            const idx = Array.from(sib).indexOf(el);
+            el.style.setProperty('--reveal-delay', `${Math.min(idx * 80, 480)}ms`);
+          }
         }
+        io.observe(el);
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
-    revealEls.forEach((el, i) => {
-      // Auto-stagger if no explicit delay set
-      if (!el.style.getPropertyValue('--reveal-delay')) {
-        const sib = el.parentElement && el.parentElement.querySelectorAll(':scope > .reveal');
-        if (sib && sib.length > 1) {
-          const idx = Array.from(sib).indexOf(el);
-          el.style.setProperty('--reveal-delay', `${Math.min(idx * 80, 480)}ms`);
-        }
-      }
-      io.observe(el);
-    });
-  } else {
-    revealEls.forEach((el) => el.classList.add('is-in'));
+    } else {
+      revealEls.forEach((el) => el.classList.add('is-in'));
+    }
+  } catch (err) {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-in'));
   }
+
+  setTimeout(() => {
+    document.querySelectorAll('.reveal:not(.is-in)').forEach(el => {
+      const r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight * 1.5) el.classList.add('is-in');
+    });
+  }, 2500);
 
   /* ---------- Portfolio card hover gradient ---------- */
   document.querySelectorAll('.pcard').forEach((card) => {

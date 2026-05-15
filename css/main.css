@@ -992,13 +992,15 @@ body::before {
 }
 .footer__back:hover { color: var(--accent); }
 
-.reveal {
+/* Reveal animations — only apply hide state when JS is confirmed running */
+.reveal { opacity: 1; transform: none; }
+html.js .reveal {
   opacity: 0;
   transform: translateY(16px);
   transition: opacity 700ms var(--ease-out), transform 700ms var(--ease-out);
   transition-delay: var(--reveal-delay, 0ms);
 }
-.reveal.is-in { opacity: 1; transform: translateY(0); }
+html.js .reveal.is-in { opacity: 1; transform: translateY(0); }
 
 .pt-overlay {
   position: fixed;
