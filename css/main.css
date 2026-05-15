@@ -862,6 +862,15 @@ body::before {
 @media (max-width: 920px) { .team-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 560px) { .team-grid { grid-template-columns: 1fr; } }
 
+.team-grid--duo {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: calc((var(--container) - 4rem) * 2 / 3);
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (max-width: 920px) { .team-grid--duo { grid-template-columns: repeat(2, 1fr); max-width: none; } }
+@media (max-width: 560px) { .team-grid--duo { grid-template-columns: 1fr; } }
+
 .person {
   background: var(--bg-card);
   padding: 2.25rem 1.75rem;
