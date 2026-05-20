@@ -23,8 +23,22 @@
         <a href="leadership.html">Leadership</a>
         <a href="contact.html" class="nav-cta is-active"><span class="nav-cta__full">Get in touch</span><span class="nav-cta__short">Contact</span></a>
       </nav>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav-overlay" aria-label="Open menu">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
     </div>
   </header>
+
+  <div id="primary-nav-overlay" class="nav-overlay" hidden>
+    <nav class="nav-overlay__inner" aria-label="Mobile navigation">
+      <a href="portfolio.html" class="nav-overlay__link">Portfolio</a>
+      <a href="approach.html" class="nav-overlay__link">Approach</a>
+      <a href="leadership.html" class="nav-overlay__link">Leadership</a>
+      <a href="contact.html" class="nav-overlay__link nav-overlay__link--cta">Contact</a>
+    </nav>
+  </div>
 
   <!-- ========== Sub-hero ========== -->
   <section class="subhero">
