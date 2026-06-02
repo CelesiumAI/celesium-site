@@ -123,5 +123,58 @@ for (const [abs, doc] of parsed) {
   }
 }
 
-console.log(`SMOKE-PASS html=${htmlFiles.length} sitemap_urls=${locs.length}`);
+// --- 5. ENV-086 library safe-subset guard --------------------------------
+// The public Platform page (library.html) and its build-time data file
+// (data/library.json) must NEVER expose engine internals — no slugs,
+// no subdomains, no demo URLs, no methodology / authority references,
+// no proof-hook internals. This guard is belt-and-braces; the brief
+// for ENV-086 locks the safe-subset rule.
+const libraryHtmlPath = join(repoRoot, 'library.html');
+const libraryJsonPath = join(repoRoot, 'data', 'library.json');
+if (!existsSync(libraryHtmlPath)) fail('library.html missing');
+if (!existsSync(libraryJsonPath)) fail('data/library.json missing');
+
+const libraryJsonSrc = readFileSync(libraryJsonPath, 'utf8');
+let libraryJson;
+try {
+  libraryJson = JSON.parse(libraryJsonSrc);
+} catch (err) {
+  fail(`data/library.json invalid JSON: ${err.message}`);
+}
+if (!Array.isArray(libraryJson.sectors) || libraryJson.sectors.length !== 14) {
+  fail(`data/library.json must list exactly 14 sectors (got ${libraryJson.sectors?.length})`);
+}
+for (const s of libraryJson.sectors) {
+  if (!s.name || !['populated', 'in_development'].includes(s.status) || !Array.isArray(s.engines)) {
+    fail(`data/library.json sector malformed: ${JSON.stringify(s)}`);
+  }
+  for (const e of s.engines) {
+    const keys = Object.keys(e).sort().join(',');
+    if (keys !== 'displayName,purpose') {
+      fail(`data/library.json engine has extra fields (must be only displayName+purpose): ${keys}`);
+    }
+  }
+}
+
+// Tokens that MUST NOT appear in either the public HTML or the
+// public JSON. Engine subdomain pattern .celesium.com is forbidden,
+// "engineSlug", "demoUrl", "proofHook", and "envelopeId" are
+// forbidden. (We still allow celesium.ai/celesium.com brand mentions
+// in the page chrome.)
+const libraryHtmlSrc = readFileSync(libraryHtmlPath, 'utf8');
+const forbiddenInPublic = [
+  { rx: /\b[a-z0-9-]+\.celesium\.com\b/i, label: 'engine subdomain on celesium.com' },
+  { rx: /engineSlug/i, label: 'engineSlug field' },
+  { rx: /demoUrl/i, label: 'demoUrl field' },
+  { rx: /proofHook/i, label: 'proofHook field' },
+  { rx: /envelopeId/i, label: 'envelopeId field' },
+];
+for (const { rx, label } of forbiddenInPublic) {
+  if (rx.test(libraryHtmlSrc)) fail(`library.html exposes ${label}`);
+  if (rx.test(libraryJsonSrc)) fail(`data/library.json exposes ${label}`);
+}
+
+console.log(
+  `SMOKE-PASS html=${htmlFiles.length} sitemap_urls=${locs.length} library_sectors=${libraryJson.sectors.length} library_engines=${libraryJson.engineCount}`,
+);
 process.exit(0);

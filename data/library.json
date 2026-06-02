@@ -1,0 +1,170 @@
+{
+  "version": 1,
+  "generatedAt": "2026-06-02",
+  "sectorCount": 14,
+  "engineCount": 21,
+  "sectors": [
+    {
+      "name": "HR",
+      "status": "in_development",
+      "engines": []
+    },
+    {
+      "name": "Legal",
+      "status": "populated",
+      "engines": [
+        {
+          "displayName": "Auto-Renewal Clause Enforceability Reviewer",
+          "purpose": "Tests automatic-renewal clauses for enforceability for in-house commercial-contracts counsel."
+        },
+        {
+          "displayName": "DPA Adequacy Reviewer",
+          "purpose": "Reviews data-processing agreements for adequacy for privacy counsel and data protection officers."
+        },
+        {
+          "displayName": "Near-Duplicate Email eDiscovery Defensibility Analyzer",
+          "purpose": "Defends near-duplicate email production decisions for eDiscovery counsel and review managers."
+        },
+        {
+          "displayName": "Sentiment Hot-Document Reviewer",
+          "purpose": "Surfaces sentiment-driven hot documents in eDiscovery review for litigation teams."
+        }
+      ]
+    },
+    {
+      "name": "Accounting/Finance",
+      "status": "populated",
+      "engines": [
+        {
+          "displayName": "Financial-Reporting Controls Mapping Reviewer",
+          "purpose": "Maps internal controls to financial-reporting risks for SOX programs and external audit teams."
+        },
+        {
+          "displayName": "Continuous Control Monitoring Reviewer",
+          "purpose": "Flags anomalies in continuous-control-monitoring data for internal-audit and SOX teams."
+        }
+      ]
+    },
+    {
+      "name": "Healthcare",
+      "status": "populated",
+      "engines": [
+        {
+          "displayName": "Medical Necessity & Level-of-Care Reviewer",
+          "purpose": "Decides whether a hospital stay meets level-of-care defensibility, for utilization-review nurses and physician advisors."
+        },
+        {
+          "displayName": "Inpatient vs Observation Status Reviewer",
+          "purpose": "Calls inpatient versus observation status for utilization-review teams under the Two-Midnight benchmark."
+        },
+        {
+          "displayName": "Principal-Diagnosis Sequencing Reviewer",
+          "purpose": "Sequences principal diagnoses for clinical documentation integrity and HIM teams."
+        },
+        {
+          "displayName": "RAC & UPIC Overpayment Defense Analyzer",
+          "purpose": "Builds defensible responses to overpayment demands for hospital appeals teams."
+        }
+      ]
+    },
+    {
+      "name": "Security/Physical",
+      "status": "in_development",
+      "engines": []
+    },
+    {
+      "name": "Insurance",
+      "status": "populated",
+      "engines": [
+        {
+          "displayName": "Wildfire Catastrophe-Zone Insurability Reviewer",
+          "purpose": "Calls wildfire-zone insurability and moratorium decisions for property underwriters and compliance."
+        }
+      ]
+    },
+    {
+      "name": "Construction/Safety",
+      "status": "in_development",
+      "engines": []
+    },
+    {
+      "name": "Real Estate",
+      "status": "in_development",
+      "engines": []
+    },
+    {
+      "name": "Banking/Compliance",
+      "status": "populated",
+      "engines": [
+        {
+          "displayName": "SAR Filing Determination Analyzer",
+          "purpose": "Calls suspicious-activity-report filing decisions for BSA and AML officers."
+        },
+        {
+          "displayName": "AML Program Adequacy Analyzer",
+          "purpose": "Assesses anti-money-laundering program adequacy for BSA officers and AML auditors."
+        }
+      ]
+    },
+    {
+      "name": "Education/Higher-Ed",
+      "status": "populated",
+      "engines": [
+        {
+          "displayName": "Research-Security Disclosure Defensibility Reviewer",
+          "purpose": "Reviews federally-funded research-security disclosures for university research-compliance offices."
+        }
+      ]
+    },
+    {
+      "name": "Manufacturing/Quality",
+      "status": "in_development",
+      "engines": []
+    },
+    {
+      "name": "Energy/Utilities",
+      "status": "populated",
+      "engines": [
+        {
+          "displayName": "SBTi Target Validation Reviewer",
+          "purpose": "Reviews corporate net-zero target submissions for science-based-targets readiness, for sustainability officers."
+        },
+        {
+          "displayName": "Scope-3 Category Classification Reviewer",
+          "purpose": "Classifies indirect value-chain emissions into their fifteen categories for sustainability-accounting teams."
+        },
+        {
+          "displayName": "GHG Emissions Accounting Reviewer",
+          "purpose": "Reviews Scope-1 and Scope-2 emissions accounting for corporate sustainability-reporting teams."
+        }
+      ]
+    },
+    {
+      "name": "Government/Procurement",
+      "status": "in_development",
+      "engines": []
+    },
+    {
+      "name": "Export Controls & Trade Compliance",
+      "status": "populated",
+      "engines": [
+        {
+          "displayName": "EAR License-Exception Eligibility Reviewer",
+          "purpose": "Determines license-exception eligibility for export-compliance officers shipping controlled goods."
+        },
+        {
+          "displayName": "Technology Control Plan Adequacy Reviewer",
+          "purpose": "Reviews technology control plans for foreign-national access at universities and defense contractors."
+        },
+        {
+          "displayName": "Deemed-Export License Determination Analyzer",
+          "purpose": "Flags deemed-export license triggers for HR and export-control teams hiring foreign-national talent on controlled technology."
+        },
+        {
+          "displayName": "ITAR vs EAR Jurisdiction Classifier",
+          "purpose": "Classifies products and technology as ITAR versus EAR for export-control engineers and trade-compliance counsel."
+        }
+      ]
+    }
+  ]
+}

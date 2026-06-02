@@ -4,7 +4,8 @@
   "private": true,
   "description": "celesium.ai — applied AI studio brand site",
   "scripts": {
-    "build": "node scripts/smoke.mjs",
+    "build": "node scripts/build-library.mjs && node scripts/smoke.mjs",
+    "build-library": "node scripts/build-library.mjs",
     "smoke": "node scripts/smoke.mjs"
   },
   "dependencies": {
