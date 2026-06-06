@@ -3,14 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact — CelesiumAI</title>
-  <meta name="description" content="Get in touch with CelesiumAI — applied AI studio incubated under Celesium Capital. Houston, Texas.">
+  <title>Contact &amp; Request a demo — CelesiumAI</title>
+  <meta name="description" content="Tell us the one decision costing your team the most — we'll show you the engine for it. info@celesium.ai · Houston, Texas.">
   <link rel="canonical" href="https://celesium.ai/contact.html">
-  <link rel="stylesheet" href="css/main.css?v=20260515c">
+  <link rel="stylesheet" href="css/main.css?v=20260606a">
 </head>
 <body>
 
-  <!-- ========== Top rail / nav ========== -->
   <header class="rail">
     <div class="rail__inner">
       <a href="index.html" class="brand" aria-label="CelesiumAI home">
@@ -18,10 +17,11 @@
         <span>Celesium<em>AI</em></span>
       </a>
       <nav class="nav" aria-label="Primary">
-        <a href="portfolio.html">Portfolio</a>
-        <a href="approach.html">Approach</a>
+        <a href="portfolio.html">Solutions</a>
+        <a href="approach.html">How it works</a>
+        <a href="security.html">Security</a>
         <a href="leadership.html">Leadership</a>
-        <a href="contact.html" class="nav-cta is-active"><span class="nav-cta__full">Get in touch</span><span class="nav-cta__short">Contact</span></a>
+        <a href="contact.html" class="nav-cta is-active"><span class="nav-cta__full">Request a demo</span><span class="nav-cta__short">Demo</span></a>
       </nav>
       <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav-overlay" aria-label="Open menu">
         <span class="nav-toggle__bar"></span>
@@ -33,42 +33,40 @@
 
   <div id="primary-nav-overlay" class="nav-overlay" hidden>
     <nav class="nav-overlay__inner" aria-label="Mobile navigation">
-      <a href="portfolio.html" class="nav-overlay__link">Portfolio</a>
-      <a href="approach.html" class="nav-overlay__link">Approach</a>
+      <a href="portfolio.html" class="nav-overlay__link">Solutions</a>
+      <a href="approach.html" class="nav-overlay__link">How it works</a>
+      <a href="security.html" class="nav-overlay__link">Security</a>
       <a href="leadership.html" class="nav-overlay__link">Leadership</a>
-      <a href="contact.html" class="nav-overlay__link nav-overlay__link--cta">Contact</a>
+      <a href="contact.html" class="nav-overlay__link nav-overlay__link--cta">Request a demo</a>
     </nav>
   </div>
 
-  <!-- ========== Sub-hero ========== -->
   <section class="subhero">
     <div class="container">
       <div class="subhero__inner">
         <div>
-          <div class="eyebrow reveal" style="margin-bottom: 1.5rem;">— Contact · The studio</div>
+          <div class="eyebrow reveal" style="margin-bottom: 1.5rem;">— Contact · Request a demo</div>
           <h1 class="subhero__title reveal">
-            Start a<br><em>conversation.</em>
+            Tell us the<br>one decision<br><em>that costs you most.</em>
           </h1>
         </div>
         <p class="lede reveal" style="--reveal-delay: 200ms;">
-          We respond personally to every introduction. Tell us about the problem you're working on — the more specific, the better.
+          We'll show you the engine for it — and how it cites the rule. We respond personally to every introduction. The more specific you are about the decision, the better.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- ========== Contact ========== -->
   <section class="section">
     <div class="container">
 
       <div class="contact-grid">
 
-        <!-- Meta column -->
         <div class="contact-meta">
           <div class="contact-meta__block reveal">
             <div class="contact-meta__label">Direct</div>
             <div class="contact-meta__value">
-              <a href="mailto:hello@celesium.ai">hello@celesium.ai</a>
+              <a href="mailto:info@celesium.ai">info@celesium.ai</a>
             </div>
           </div>
 
@@ -81,24 +79,23 @@
           </div>
 
           <div class="contact-meta__block reveal">
-            <div class="contact-meta__label">Parent firm</div>
-            <div class="contact-meta__value">
-              <a href="https://celesium.com" target="_blank" rel="noopener">Celesium Capital ↗</a><br>
-              <span style="font-family:var(--font-mono); font-size:0.85rem; color:var(--ink-mute);">Private equity · Houston</span>
+            <div class="contact-meta__label">See it yourself</div>
+            <div class="contact-meta__value" style="font-size: 0.95rem;">
+              No-login demos · watch an engine cite its authority in real time.<br>
+              <a href="https://celesium-engine-demo.vercel.app" target="_blank" rel="noopener" style="color: var(--accent);">Explore the library ↗</a>
             </div>
           </div>
 
           <div class="contact-meta__block reveal" style="background: transparent; border: 1px dashed var(--bg-line);">
-            <div class="contact-meta__label">For LPs &amp; portfolio leadership</div>
+            <div class="contact-meta__label">Security review</div>
             <div class="contact-meta__value" style="font-size: 0.95rem;">
-              Use the
-              <a href="https://celesium.com" target="_blank" rel="noopener" style="color: var(--accent);">Celesium Capital</a>
-              investor portal.
+              For procurement and vendor-risk teams: see the
+              <a href="security.html" style="color: var(--accent);">Security &amp; Trust page</a>
+              for posture, controls, and certification status.
             </div>
           </div>
         </div>
 
-        <!-- Form column -->
         <form id="contact-form" class="contact-form reveal" novalidate>
 
           <div class="field">
@@ -119,23 +116,23 @@
           <div class="field">
             <label for="topic">What is this about?</label>
             <select id="topic" name="topic">
+              <option value="demo">Request a demo</option>
+              <option value="revenue-integrity">Revenue Integrity (healthcare / billing defense)</option>
+              <option value="aml-bsa">AML / BSA (banking)</option>
+              <option value="trade-compliance">Trade Compliance (EAR / ITAR / OFAC)</option>
+              <option value="litigation">Litigation &amp; eDiscovery</option>
+              <option value="esg">ESG Reporting</option>
+              <option value="research-security">Research Security (NSPM-33)</option>
+              <option value="security-review">Security review / vendor questionnaire</option>
               <option value="partnership">Institutional partnership</option>
-              <option value="billxm">BillXM — medical billing intelligence</option>
-              <option value="vigilarx">Vigilarx — research security</option>
-              <option value="intelarx">Intelarx — investigative intelligence</option>
-              <option value="vainture">Vainture — academic IP commercialization</option>
-              <option value="quarare">Quarare — expert witness intelligence</option>
-              <option value="cclinic">CClinic — virtual AI clinic</option>
-              <option value="concordia">Concordia — multi-agent investment research</option>
-              <option value="research">Research collaboration</option>
               <option value="press">Press</option>
               <option value="other">General inquiry</option>
             </select>
           </div>
 
           <div class="field">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" required placeholder="The problem you're working on, briefly."></textarea>
+            <label for="message">The one decision that costs you most</label>
+            <textarea id="message" name="message" required placeholder="A claim denial, an alert queue, an export classification, an expert-witness call — anywhere your team is defending an answer today."></textarea>
           </div>
 
           <button type="submit" class="btn btn--primary" style="border: none;">
@@ -152,30 +149,29 @@
     </div>
   </section>
 
-  <!-- ========== Footer ========== -->
   <footer class="footer">
     <div class="container">
       <div class="footer__grid">
         <div class="footer__brand">
           <div class="display">Celesium<em style="color:var(--accent); font-style:italic;">AI</em></div>
-          <p class="body">Applied AI studio incubated under Celesium Capital. We build and operate.</p>
+          <p class="body">AI engines for regulated industries. Defensible by construction. Incubated by CelesiumAI.</p>
         </div>
         <div class="footer__col">
-          <div class="footer__col-title">Portfolio</div>
+          <div class="footer__col-title">Solutions</div>
           <ul>
-            <li><a href="https://billxm.com" target="_blank" rel="noopener"><span class="pip" style="background:var(--signal-live);"></span> BillXM</a></li>
-            <li><a href="https://vigilarx.com" target="_blank" rel="noopener"><span class="pip" style="background:var(--signal-live);"></span> Vigilarx</a></li>
-            <li><a href="https://intelarx.net" target="_blank" rel="noopener"><span class="pip" style="background:var(--signal-live);"></span> Intelarx</a></li>
-            <li><a href="https://vainture.com" target="_blank" rel="noopener"><span class="pip" style="background:var(--signal-live);"></span> Vainture</a></li>
-            <li><a href="https://quarare.com" target="_blank" rel="noopener"><span class="pip" style="background:var(--signal-live);"></span> Quarare</a></li>
-            <li><a href="portfolio.html"><span class="pip" style="background:var(--signal-dev);"></span> CClinic</a></li>
-            <li><a href="portfolio.html"><span class="pip" style="background:var(--signal-dev);"></span> Concordia</a></li>
+            <li><a href="portfolio.html">Revenue Integrity</a></li>
+            <li><a href="portfolio.html">AML / BSA</a></li>
+            <li><a href="portfolio.html">Trade Compliance</a></li>
+            <li><a href="portfolio.html">Litigation &amp; eDiscovery</a></li>
+            <li><a href="portfolio.html">ESG Reporting</a></li>
+            <li><a href="https://celesium-engine-demo.vercel.app" target="_blank" rel="noopener">Explore the library ↗</a></li>
           </ul>
         </div>
         <div class="footer__col">
           <div class="footer__col-title">Studio</div>
           <ul>
-            <li><a href="approach.html">Approach</a></li>
+            <li><a href="approach.html">How it works</a></li>
+            <li><a href="security.html">Security &amp; trust</a></li>
             <li><a href="leadership.html">Leadership</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
@@ -184,7 +180,7 @@
           <div class="footer__col-title">Houston, TX</div>
           <ul>
             <li style="color: var(--ink-soft); font-size: 0.92rem;">6222 Richmond, Ste 800<br>Houston, TX 77057</li>
-            <li><a href="https://celesium.com" target="_blank" rel="noopener">Celesium Capital ↗</a></li>
+            <li><a href="mailto:info@celesium.ai">info@celesium.ai</a></li>
           </ul>
         </div>
       </div>
@@ -195,7 +191,6 @@
     </div>
   </footer>
 
-  <!-- ========== Resend contact form handler ========== -->
   <script>
   (function() {
     const form = document.getElementById('contact-form');
@@ -238,7 +233,7 @@
         const errorEl = document.createElement('div');
         errorEl.className = 'form-error';
         errorEl.style.cssText = 'padding: 1rem; margin-bottom: 1.5rem; border-left: 3px solid #FF6B6B; background: rgba(255,107,107,0.08); color: var(--ink-soft); font-size: 0.9rem;';
-        errorEl.textContent = 'Something went wrong. Please email hello@celesium.ai directly or try again.';
+        errorEl.textContent = 'Something went wrong. Please email info@celesium.ai directly or try again.';
         form.insertBefore(errorEl, form.firstChild);
         submitBtn.disabled = false;
         submitBtn.innerHTML = originalText;
@@ -247,6 +242,6 @@
   })();
   </script>
 
-  <script src="js/main.js?v=20260515c"></script>
+  <script src="js/main.js?v=20260606a"></script>
 </body>
 </html>
