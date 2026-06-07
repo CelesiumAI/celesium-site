@@ -2,6 +2,13 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "outputDirectory": ".",
+  "rewrites": [
+    { "source": "/library", "destination": "https://celesium-engine-demo.vercel.app/library" },
+    { "source": "/library/:path*", "destination": "https://celesium-engine-demo.vercel.app/library/:path*" }
+  ],
+  "redirects": [
+    { "source": "/library.html", "destination": "/library", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/(.*)",
