@@ -23,6 +23,11 @@ function listHtmlAtRoot() {
     .sort();
 }
 
+// Hrefs handled by Vercel rewrites in vercel.json — not backed by files
+// in this repo, so the file-existence check should skip them.
+const REWRITE_PATHS = new Set(['/library']);
+const REWRITE_PREFIXES = ['/library/'];
+
 function resolveInternalHref(rawHref, fromFile) {
   // Returns absolute filesystem path the href should resolve to, or null to skip.
   if (!rawHref) return null;
@@ -36,6 +41,9 @@ function resolveInternalHref(rawHref, fromFile) {
   // Strip query + fragment.
   const noFragment = href.split('#')[0].split('?')[0];
   if (noFragment === '') return null;
+  if (REWRITE_PATHS.has(noFragment) || REWRITE_PREFIXES.some((p) => noFragment.startsWith(p))) {
+    return null;
+  }
 
   let rel;
   if (noFragment.startsWith('/')) {
