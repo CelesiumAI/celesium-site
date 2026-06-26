@@ -688,7 +688,7 @@ body.nav-open .rail { transform: none !important; }
   overflow: hidden;
   isolation: isolate;
   box-shadow: 0 2px 8px rgba(0,0,0,0.18);
-  min-height: 480px;
+  min-height: 340px;
 }
 .pcard::before {
   content: '';
