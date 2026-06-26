@@ -40,12 +40,12 @@ const FUNCTIONS = [
   {
     slug: 'clinical-drug-safety',
     name: 'Clinical & Drug Safety',
-    rx: /(pharmacovig|drug safety|clinical pharmac|clinical research|physician (?:advisor|reviewer)|utilization (?:management|review)|\bcdi\b|him\b|medical director|nursing|pharmacist|qppv|appeals.*clinical|hospitalist|clinical documentation)/i,
+    rx: /(pharmacovig|drug safety|clinical pharmac|clinical research|physician (?:advisor|reviewer)|utilization (?:management|review)|\bcdi\b|him\b|medical director|medical staff|nursing|pharmacist|qppv|appeals.*clinical|hospitalist|clinical documentation)/i,
   },
   {
     slug: 'revenue-integrity',
     name: 'Revenue Integrity',
-    rx: /(revenue integrity|revenue cycle|appeals (?:specialist|director|coordinator|officer|nurse|counsel)|claims compliance|chargeback|reimbursement|hospital appeals)/i,
+    rx: /(revenue integrity|revenue cycle|appeals (?:specialist|director|coordinator|officer|nurse|counsel)|claims compliance|chargeback|reimbursement|hospital appeals|grievances|savings capture|working aged)/i,
   },
   {
     slug: 'trade-export',

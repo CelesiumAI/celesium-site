@@ -8,3 +8,7 @@ node_modules/
 .idea/
 
 .vercel
+
+# Session notes (local only)
+MOBILE-AUDIT-2026-05-20.md
+session-state.md
