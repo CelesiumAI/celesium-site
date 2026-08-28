@@ -22,6 +22,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 48px;height:64px;d
 .nav-logo{font-weight:700;font-size:18px;letter-spacing:-.02em;color:#fff;text-decoration:none}.nav-logo span{color:var(--teal-b)}
 .nav-links{display:flex;gap:28px;align-items:center}
 .nav-links a{color:rgba(255,255,255,.65);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s}.nav-links a:hover{color:#fff}
+.nav-burger{display:none;background:none;border:none;cursor:pointer;padding:6px;z-index:101}.nav-burger span{display:block;width:22px;height:2px;background:#fff;margin:5px 0;border-radius:2px;transition:all .3s}.nav-burger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}.nav-burger.open span:nth-child(2){opacity:0}.nav-burger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
 .nav-cta{background:var(--teal);color:#fff;padding:9px 22px;border-radius:7px;font-weight:600;font-size:13px;text-decoration:none;transition:all .2s}.nav-cta:hover{background:var(--teal-b)}
 
 /* HERO */
@@ -237,12 +238,12 @@ footer{padding:48px 48px 32px;background:var(--ink);color:rgba(255,255,255,.5);d
 .ft-links a{font-size:13px;color:rgba(255,255,255,.4);text-decoration:none}.ft-links a:hover{color:rgba(255,255,255,.7)}
 .ft-copy{font-size:12px;color:rgba(255,255,255,.2)}
 
-@media(max-width:768px){nav{padding:0 20px}.nav-links{display:none}.hero{padding:100px 20px 60px}.hero-stats{gap:24px}.stat-n{font-size:30px}.platforms{padding:60px 20px 80px}.grid{grid-template-columns:1fr}.differ{padding:60px 20px}.ip-band{padding:40px 20px;flex-direction:column;text-align:center}.cta{padding:80px 20px}.cta-act{flex-direction:column;align-items:center}footer{padding:32px 20px;flex-direction:column;align-items:flex-start}.ft-r{text-align:left}}
+@media(max-width:768px){nav{padding:0 20px}.nav-burger{display:flex;flex-direction:column;justify-content:center}.nav-links{display:none;position:fixed;top:64px;left:0;right:0;background:rgba(20,23,32,.97);backdrop-filter:blur(16px);flex-direction:column;padding:24px 20px;gap:0;border-top:1px solid rgba(255,255,255,.06)}.nav-links.nav-open{display:flex}.nav-links a{padding:14px 0;font-size:16px;border-bottom:1px solid rgba(255,255,255,.06)}.nav-cta{margin-top:8px;text-align:center}.hero{padding:100px 20px 60px}.hero-stats{gap:24px}.stat-n{font-size:30px}.platforms{padding:60px 20px 80px}.grid{grid-template-columns:1fr}.differ{padding:60px 20px}.ip-band{padding:40px 20px;flex-direction:column;text-align:center}.cta{padding:80px 20px}.cta-act{flex-direction:column;align-items:center}footer{padding:32px 20px;flex-direction:column;align-items:flex-start}.ft-r{text-align:left}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important}}
 </style>
 </head>
 <body>
-<nav><a href="/" class="nav-logo">Celesium<span>AI</span></a><div class="nav-links"><a href="/portfolio.html">Solutions</a><a href="/approach.html">How it works</a><a href="/security.html">Security</a><a href="/leadership.html">Leadership</a><a href="/contact.html" class="nav-cta">Request a demo</a></div></nav>
+<nav><a href="/" class="nav-logo">Celesium<span>AI</span></a><button class="nav-burger" aria-label="Menu" onclick="this.classList.toggle('open');document.querySelector('.nav-links').classList.toggle('nav-open')"><span></span><span></span><span></span></button><div class="nav-links"><a href="/portfolio.html">Solutions</a><a href="/approach.html">How it works</a><a href="/security.html">Security</a><a href="/leadership.html">Leadership</a><a href="/contact.html" class="nav-cta">Request a demo</a></div></nav>
 
 <section class="hero"><div class="hero-g"></div><div class="hero-g2"></div><div class="hero-c">
   <div class="hero-ey">AI Solutions for Enterprise · Houston, TX</div>
