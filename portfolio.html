@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Solutions — CelesiumAI</title>
-  <meta name="description" content="Six suites of defensible AI platforms for regulated functions: revenue integrity, AML/BSA, trade compliance, litigation, research security, and reporting.">
+  <meta name="description" content="Ten live AI platforms for regulated decisions: healthcare billing, legal expert reports, research security, drug discovery, revenue integrity, FX, and government compliance.">
   <link rel="canonical" href="https://celesium.ai/portfolio.html">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://celesium.ai/portfolio.html">
   <meta property="og:title" content="Solutions — CelesiumAI">
-  <meta property="og:description" content="Built for your decision, not from a template. Six suites of defensible AI platforms.">
+  <meta property="og:description" content="Built for your decision, not from a template. Ten live platforms, each answering one real question.">
   <meta property="og:site_name" content="CelesiumAI">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -60,16 +60,162 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 48px;height:64px;d
 .note{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text3);letter-spacing:.04em;line-height:1.6;margin-top:32px}
 .fig{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);border:1px solid rgba(13,115,119,.3);padding:4px 10px;border-radius:4px;display:inline-block;margin-bottom:16px}
 
-/* SUITE CARDS */
-.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-.suite{position:relative;overflow:hidden;background:var(--card-bg);border:1px solid var(--card-border);border-radius:16px;padding:30px 28px 28px;transition:all .3s}
-.suite::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--hue)}
-.suite:hover{border-color:var(--hue);transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,.08)}
-.suite .who{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--hue);font-weight:600;margin-bottom:10px}
-.suite h3{font-size:23px;font-weight:700;letter-spacing:-.02em;margin-bottom:11px}
-.suite p{font-size:14.5px;color:var(--text2);line-height:1.65}
-.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px;list-style:none}
-.tags li{font-family:'JetBrains Mono',monospace;font-size:10px;padding:5px 11px;border-radius:20px;background:var(--warm);border:1px solid var(--card-border);color:var(--text2);letter-spacing:.05em}
+/* PLATFORM GRID */
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;max-width:1000px;margin:0 auto}
+
+/* CARDS — full visual top, text bottom */
+.card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:16px;transition:all .3s;cursor:pointer;text-decoration:none;color:inherit;display:block;overflow:hidden}
+.card:hover{border-color:var(--teal);transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,.1)}
+
+/* RICH COLORED VISUAL PANELS */
+.card-vis{height:200px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+/* Each sector gets a rich gradient */
+.cv-health{background:linear-gradient(135deg,#0D7377 0%,#0A5C5E 40%,#0E6E6B 100%)}
+.cv-legal{background:linear-gradient(135deg,#5B4DC9 0%,#4A3DB0 40%,#6B5CE7 100%)}
+.cv-research{background:linear-gradient(135deg,#1A6B9A 0%,#155A82 40%,#1E7AAD 100%)}
+.cv-venture{background:linear-gradient(135deg,#B8862D 0%,#9A7028 40%,#C49A3C 100%)}
+.cv-finance{background:linear-gradient(135deg,#2A4060 0%,#1E3350 40%,#324B6E 100%)}
+.cv-payer{background:linear-gradient(135deg,#1B5E78 0%,#134A60 40%,#1E6E8A 100%)}
+.cv-biopharma{background:linear-gradient(135deg,#3A3E80 0%,#2E3270 40%,#4A4E98 100%)}
+.cv-gov{background:linear-gradient(135deg,#6B4F2E 0%,#5A4228 40%,#7D5D38 100%)}
+
+/* Subtle pattern overlay on all panels */
+.card-vis::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.08) 1px,transparent 1px);background-size:16px 16px;opacity:.5}
+.card-vis::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 60%,rgba(0,0,0,.15) 100%)}
+
+.card-body{padding:20px 24px}
+.card-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
+.card-dom{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--text3)}
+.card-live{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--green);display:flex;align-items:center;gap:5px}
+.card-live::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.card-name{font-size:22px;font-weight:700;margin-bottom:1px;letter-spacing:-.01em}
+.card-url{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text3);margin-bottom:8px}
+.card-q{font-size:14px;color:var(--text2);line-height:1.5;font-style:italic}
+
+/* ═══ WHITE-ON-COLOR VISUALIZATIONS ═══ */
+/* All viz elements are white/bright on rich colored backgrounds */
+
+/* Data grid (BillXM) */
+.vz-grid{position:relative;z-index:1;width:85%}
+.vz-row{display:flex;align-items:center;gap:8px;margin-bottom:8px;opacity:0;animation:rowIn 5s ease infinite}
+.vz-row:nth-child(1){animation-delay:0s}.vz-row:nth-child(2){animation-delay:.4s}.vz-row:nth-child(3){animation-delay:.8s}.vz-row:nth-child(4){animation-delay:1.2s}.vz-row:nth-child(5){animation-delay:1.6s}
+.vz-bar{height:3px;border-radius:2px;background:rgba(255,255,255,.2)}
+.vz-val{font-family:'JetBrains Mono',monospace;font-size:11px;color:rgba(255,255,255,.7);width:48px;text-align:right}
+.vz-dot{width:8px;height:8px;border-radius:50%;opacity:0;animation:dotIn 5s ease infinite;flex-shrink:0}
+.vz-dot.ok{background:#4ADE80;box-shadow:0 0 8px rgba(74,222,128,.4)}
+.vz-dot.fl{background:#F87171;box-shadow:0 0 8px rgba(248,113,113,.4)}
+.vz-row:nth-child(1) .vz-dot{animation-delay:.6s}.vz-row:nth-child(2) .vz-dot{animation-delay:1s}
+.vz-row:nth-child(3) .vz-dot{animation-delay:1.4s}.vz-row:nth-child(4) .vz-dot{animation-delay:1.8s}
+.vz-row:nth-child(5) .vz-dot{animation-delay:2.2s}
+@keyframes rowIn{0%,100%{opacity:0;transform:translateX(-8px)}10%,88%{opacity:1;transform:none}}
+@keyframes dotIn{0%,100%{opacity:0;transform:scale(0)}14%,84%{opacity:1;transform:scale(1)}}
+
+/* Sealed document (Quarare) */
+.vz-doc{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center}
+.vz-doc-frame{width:72px;height:92px;border:2px solid rgba(255,255,255,.3);border-radius:6px;background:rgba(255,255,255,.06);position:relative}
+.vz-doc-lines{position:absolute;top:14px;left:10px;right:10px}
+.vz-dl{height:2px;background:rgba(255,255,255,.12);margin-bottom:7px;border-radius:1px}
+.vz-seal{
+  margin-top:12px;width:44px;height:44px;border-radius:50%;
+  border:2px solid rgba(255,255,255,.6);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'JetBrains Mono',monospace;font-size:8px;font-weight:700;
+  color:rgba(255,255,255,.8);letter-spacing:.06em;
+  opacity:0;animation:sealIn 4s ease infinite 1.2s;
+  box-shadow:0 0 20px rgba(255,255,255,.15);
+}
+@keyframes sealIn{0%{opacity:0;transform:scale(.4)}12%,70%{opacity:1;transform:scale(1)}88%,100%{opacity:0}}
+
+/* Network (Vigilarx) */
+.vz-net{position:relative;z-index:1;width:140px;height:120px}
+.vn{position:absolute;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.8);opacity:0;animation:nOn 5s ease infinite}
+.vn::after{content:'';position:absolute;inset:-4px;border-radius:50%;box-shadow:0 0 12px rgba(255,255,255,.3);opacity:0;animation:nGlow 5s ease infinite}
+.vn.alert{background:#F87171}.vn.alert::after{box-shadow:0 0 16px rgba(248,113,113,.5)}
+.vn:nth-child(1){left:15px;top:20px;animation-delay:0s}.vn:nth-child(1)::after{animation-delay:0s}
+.vn:nth-child(2){left:65px;top:10px;animation-delay:.5s}.vn:nth-child(2)::after{animation-delay:.5s}
+.vn:nth-child(3){left:110px;top:35px;animation-delay:1s}.vn:nth-child(3)::after{animation-delay:1s}
+.vn:nth-child(4){left:40px;top:60px;animation-delay:1.5s}.vn:nth-child(4)::after{animation-delay:1.5s}
+.vn:nth-child(5){left:90px;top:75px;animation-delay:2s}.vn:nth-child(5)::after{animation-delay:2s}
+.vn:nth-child(6){left:25px;top:95px;animation-delay:2.5s}.vn:nth-child(6)::after{animation-delay:2.5s}
+.ve{position:absolute;height:1px;background:rgba(255,255,255,.15);transform-origin:left center;opacity:0;animation:eOn 5s ease infinite}
+.ve:nth-child(7){left:20px;top:25px;width:50px;transform:rotate(-10deg);animation-delay:.3s}
+.ve:nth-child(8){left:70px;top:15px;width:46px;transform:rotate(26deg);animation-delay:.8s}
+.ve:nth-child(9){left:45px;top:65px;width:50px;transform:rotate(12deg);animation-delay:1.3s}
+.ve:nth-child(10){left:20px;top:25px;width:30px;transform:rotate(70deg);animation-delay:1.8s}
+.ve:nth-child(11){left:95px;top:40px;width:30px;transform:rotate(65deg);animation-delay:2.3s}
+@keyframes nOn{0%,100%{opacity:0}12%,85%{opacity:1}}
+@keyframes nGlow{0%,100%{opacity:0}12%,85%{opacity:.7}}
+@keyframes eOn{0%,100%{opacity:0}12%,85%{opacity:1}}
+
+/* Waveform (CClinic) */
+.vz-wave{position:relative;z-index:1;width:100%;height:80px;overflow:hidden}
+.vw-svg{position:absolute;top:0;left:0;width:200%;height:100%;animation:wScroll 5s linear infinite}
+@keyframes wScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* Radial (Vainture) */
+.vz-rad{position:relative;z-index:1}
+@keyframes arcFill{0%,8%{stroke-dashoffset:290}16%,78%{stroke-dashoffset:0}90%,100%{stroke-dashoffset:290}}
+
+/* Diverge (Midarx) */
+.vz-div{position:relative;z-index:1;width:140px;height:100px}
+.vd-center{position:absolute;top:50%;left:0;right:0;height:1px;background:rgba(255,255,255,.12)}
+.vd-up{position:absolute;left:20px;height:2px;background:#F87171;border-radius:1px;opacity:0;animation:divUp 5s ease-in-out infinite}
+.vd-dn{position:absolute;left:20px;height:2px;background:#4ADE80;border-radius:1px;opacity:0;animation:divDn 5s ease-in-out infinite}
+.vd-tag{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:rgba(255,255,255,.9);background:rgba(0,0,0,.2);padding:4px 12px;border-radius:4px;opacity:0;animation:tagIn 5s ease infinite 2s}
+@keyframes divUp{0%,100%{top:50%;width:0;opacity:0}20%{opacity:.8}30%,70%{top:28%;width:90px;opacity:.8}90%{opacity:0}}
+@keyframes divDn{0%,100%{top:50%;width:0;opacity:0}20%{opacity:.8}30%,70%{top:68%;width:90px;opacity:.8}90%{opacity:0}}
+@keyframes tagIn{0%{opacity:0}18%,72%{opacity:1}88%,100%{opacity:0}}
+
+/* Benchmark (Thalarx) */
+.vz-bench{position:relative;z-index:1;width:80%}
+.vb-r{margin-bottom:14px}
+.vb-lbl{font-family:'JetBrains Mono',monospace;font-size:9px;color:rgba(255,255,255,.5);letter-spacing:.08em;margin-bottom:4px}
+.vb-track{height:6px;background:rgba(255,255,255,.1);border-radius:3px;position:relative;overflow:hidden}
+.vb-f{position:absolute;top:0;left:0;height:100%;border-radius:3px;animation:bGrow 6s ease infinite}
+.vb-paid{background:rgba(248,113,113,.7)}
+.vb-fair{background:rgba(74,222,128,.7)}
+.vb-mark{position:absolute;top:-3px;width:2px;height:12px;background:rgba(255,255,255,.6);border-radius:1px;animation:bMark 6s ease infinite}
+.vb-r:nth-child(1) .vb-f{animation-delay:0s;--fw:72%}.vb-r:nth-child(1) .vb-fair{animation-delay:.15s;--fw:52%}.vb-r:nth-child(1) .vb-mark{left:52%;animation-delay:.3s}
+.vb-r:nth-child(2) .vb-f{animation-delay:.4s;--fw:58%}.vb-r:nth-child(2) .vb-fair{animation-delay:.55s;--fw:56%}.vb-r:nth-child(2) .vb-mark{left:56%;animation-delay:.7s}
+.vb-r:nth-child(3) .vb-f{animation-delay:.8s;--fw:78%}.vb-r:nth-child(3) .vb-fair{animation-delay:.95s;--fw:45%}.vb-r:nth-child(3) .vb-mark{left:45%;animation-delay:1.1s}
+@keyframes bGrow{0%,8%{width:0}16%,78%{width:var(--fw)}90%,100%{width:0}}
+@keyframes bMark{0%,10%{opacity:0}18%,78%{opacity:.8}90%,100%{opacity:0}}
+
+/* Funnel (LillixBio) */
+.vz-fun{position:relative;z-index:1;text-align:center}
+.vf-top{font-family:'JetBrains Mono',monospace;font-size:28px;font-weight:700;color:rgba(255,255,255,.25);animation:fTop 5s ease infinite}
+.vf-arr{font-size:14px;color:rgba(255,255,255,.2);margin:4px 0}
+.vf-bar{width:100px;height:4px;margin:0 auto;background:rgba(255,255,255,.1);border-radius:2px;overflow:hidden;position:relative}
+.vf-fill{position:absolute;left:0;top:0;height:100%;border-radius:2px;background:rgba(255,255,255,.5);width:0;animation:fSweep 5s ease infinite .8s}
+.vf-bot{font-family:'JetBrains Mono',monospace;font-size:32px;font-weight:800;color:#fff;margin-top:8px;opacity:0;animation:fBot 5s ease infinite 1.6s;text-shadow:0 0 20px rgba(255,255,255,.3)}
+.vf-lbl{font-family:'JetBrains Mono',monospace;font-size:9px;color:rgba(255,255,255,.4);margin-top:2px;letter-spacing:.1em;text-transform:uppercase;opacity:0;animation:fBot 5s ease infinite 2s}
+@keyframes fTop{0%,100%{opacity:0}10%,85%{opacity:.3}}
+@keyframes fSweep{0%{width:0}28%,70%{width:100%}88%,100%{width:0}}
+@keyframes fBot{0%{opacity:0;transform:scale(.7)}16%,74%{opacity:1;transform:scale(1)}90%,100%{opacity:0}}
+
+/* Grid fill (Intelarx) */
+.vz-gf{position:relative;z-index:1;display:grid;grid-template-columns:repeat(6,1fr);gap:4px}
+.gf-c{width:16px;height:16px;border-radius:3px;border:1px solid rgba(255,255,255,.12);opacity:0;animation:gfIn 7s ease infinite}
+.gf-c.on{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.25);box-shadow:0 0 6px rgba(255,255,255,.1)}
+.gf-c:nth-child(1){animation-delay:0s}.gf-c:nth-child(2){animation-delay:.12s}.gf-c:nth-child(3){animation-delay:.24s}
+.gf-c:nth-child(4){animation-delay:.36s}.gf-c:nth-child(5){animation-delay:.48s}.gf-c:nth-child(6){animation-delay:.6s}
+.gf-c:nth-child(7){animation-delay:.72s}.gf-c:nth-child(8){animation-delay:.84s}.gf-c:nth-child(9){animation-delay:.96s}
+.gf-c:nth-child(10){animation-delay:1.08s}.gf-c:nth-child(11){animation-delay:1.2s}.gf-c:nth-child(12){animation-delay:1.32s}
+.gf-c:nth-child(13){animation-delay:1.44s}.gf-c:nth-child(14){animation-delay:1.56s}.gf-c:nth-child(15){animation-delay:1.68s}
+.gf-c:nth-child(16){animation-delay:1.8s}.gf-c:nth-child(17){animation-delay:1.92s}.gf-c:nth-child(18){animation-delay:2.04s}
+@keyframes gfIn{0%,100%{opacity:0}10%,85%{opacity:1}}
+
+/* Ranked bars (Vermerit) */
+.vz-rank{position:relative;z-index:1;display:flex;align-items:flex-end;gap:10px;height:100px}
+.vr-c{display:flex;flex-direction:column;align-items:center;gap:6px}
+.vr-b{width:22px;border-radius:4px 4px 0 0;animation:vrG 5s ease infinite}
+.vr-b.r1{background:linear-gradient(180deg,rgba(255,255,255,.6),rgba(255,255,255,.2));--vh:72px;animation-delay:0s}
+.vr-b.r2{background:linear-gradient(180deg,rgba(255,255,255,.45),rgba(255,255,255,.15));--vh:56px;animation-delay:.25s}
+.vr-b.r3{background:linear-gradient(180deg,rgba(255,255,255,.35),rgba(255,255,255,.1));--vh:40px;animation-delay:.5s}
+.vr-b.r4{background:linear-gradient(180deg,rgba(255,255,255,.25),rgba(255,255,255,.08));--vh:26px;animation-delay:.75s}
+.vr-n{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(255,255,255,.5)}
+@keyframes vrG{0%,8%{height:0}16%,78%{height:var(--vh)}90%,100%{height:0}}
 
 /* DARK BAND */
 .dark{background:var(--ink);padding:96px 48px;position:relative;overflow:hidden;color:#fff}
@@ -120,7 +266,7 @@ nav{padding:0 20px}.nav-burger{display:flex;flex-direction:column;justify-conten
 .nav-links.nav-open{display:flex}.nav-links a{padding:14px 0;font-size:16px;border-bottom:1px solid rgba(255,255,255,.06)}
 .nav-links a.here::after{display:none}.nav-cta{margin-top:8px;text-align:center}
 .phero{padding:108px 20px 64px}.sec{padding:64px 20px}.dark{padding:64px 20px}.cta{padding:76px 20px}
-.grid2{grid-template-columns:1fr}.step{gap:16px}.step .n{width:34px;height:34px;font-size:12px}
+.grid{grid-template-columns:1fr}.step{gap:16px}.step .n{width:34px;height:34px;font-size:12px}
 .cta-act{flex-direction:column;align-items:center}.btn-t,.btn-o{width:100%;max-width:320px;text-align:center}
 footer{padding:32px 20px;flex-direction:column;align-items:flex-start}.ft-r{text-align:left}.ft-links{justify-content:flex-start}
 }
@@ -139,46 +285,62 @@ footer{padding:32px 20px;flex-direction:column;align-items:flex-start}.ft-r{text
 
 <section class="sec"><div class="wrap">
   <div class="sh rev">
-    <div class="sh-row"><h2>Start with the <em>decision</em></h2><span class="count">Six suites</span></div>
-    <p class="lede">Every suite below is a group of platforms built for one regulated function. You don't buy the catalog. You start with the single decision costing your team the most, prove it there, then expand.</p>
+    <div class="sh-ey">Live with customers</div>
+    <div class="sh-row"><h2>Ten platforms. <em>Each answers a real question.</em></h2><span class="count">10 live</span></div>
+    <p class="lede">Every platform below is in production with customers today. You don't buy the catalog — you start with the single decision costing your team the most, prove it there, then expand into the function around it.</p>
   </div>
-  <div class="grid2">
-    <div class="suite rev" style="--hue:#0D7377">
-      <div class="who">Healthcare finance</div>
-      <h3>Revenue Integrity</h3>
-      <p>Medical bills, claims, and appeals reviewed line by line, with every finding pinned to the CMS rate, NCCI edit, or controlling rule behind it.</p>
-      <ul class="tags"><li>BillXM</li><li>Revenue cycle</li><li>Appeals</li><li>Claims</li></ul>
-    </div>
-    <div class="suite rev" style="--hue:#1A6B9A">
-      <div class="who">Banking &amp; financial crime</div>
-      <h3>AML / BSA</h3>
-      <p>Screening and monitoring work that has to survive an examiner. Each alert and each clearance arrives with the authority it rests on.</p>
-      <ul class="tags"><li>Third-party risk</li><li>Sanctions</li><li>Monitoring</li></ul>
-    </div>
-    <div class="suite rev" style="--hue:#B0603A">
-      <div class="who">Export &amp; restricted parties</div>
-      <h3>Trade Compliance</h3>
-      <p>Vendor, partner, and counterparty screening against restricted-party and debarment sources, with the rule behind every flag.</p>
-      <ul class="tags"><li>Vigilarx</li><li>ITAR</li><li>OFAC</li><li>Entity List</li></ul>
-    </div>
-    <div class="suite rev" style="--hue:#6B5CE7">
-      <div class="who">Legal</div>
-      <h3>Litigation &amp; eDiscovery</h3>
-      <p>Case evidence turned into a defensible expert report, methodology disclosed up front, the way a court expects.</p>
-      <ul class="tags"><li>Quarare</li><li>Expert reports</li><li>Review</li></ul>
-    </div>
-    <div class="suite rev" style="--hue:#0F8554">
-      <div class="who">Universities &amp; institutions</div>
-      <h3>Research Security</h3>
-      <p>Foreign-influence and partner screening for research offices. In daily use at Rice University.</p>
-      <ul class="tags"><li>Vigilarx</li><li>Section 1286</li><li>Disclosure</li></ul>
-    </div>
-    <div class="suite rev" style="--hue:#C49A3C">
-      <div class="who">Corporate reporting</div>
-      <h3>Financial &amp; ESG Reporting</h3>
-      <p>Reported figures made re-derivable: FX cost, ESG and climate disclosure, and the evidence chain that lets an auditor check the number.</p>
-      <ul class="tags"><li>Midarx</li><li>ESG</li><li>Scope-3</li><li>GHG</li></ul>
-    </div>
+  <div class="grid">
+
+    <a href="https://billxm.com" class="card rev" target="_blank"><div class="card-vis cv-health">
+      <div class="vz-grid">
+        <div class="vz-row"><div class="vz-bar" style="width:60px"></div><div class="vz-bar" style="width:30px"></div><div class="vz-val">$847</div><div class="vz-dot ok"></div></div>
+        <div class="vz-row"><div class="vz-bar" style="width:45px"></div><div class="vz-bar" style="width:40px"></div><div class="vz-val">$312</div><div class="vz-dot ok"></div></div>
+        <div class="vz-row"><div class="vz-bar" style="width:70px"></div><div class="vz-bar" style="width:20px"></div><div class="vz-val">$1,204</div><div class="vz-dot fl"></div></div>
+        <div class="vz-row"><div class="vz-bar" style="width:50px"></div><div class="vz-bar" style="width:35px"></div><div class="vz-val">$589</div><div class="vz-dot ok"></div></div>
+        <div class="vz-row"><div class="vz-bar" style="width:40px"></div><div class="vz-bar" style="width:45px"></div><div class="vz-val">$215</div><div class="vz-dot ok"></div></div>
+      </div>
+    </div><div class="card-body"><div class="card-meta"><span class="card-dom">Healthcare</span><span class="card-live">Live</span></div><div class="card-name">BillXM</div><div class="card-url">billxm.com</div><div class="card-q">"Is this medical bill correct?"</div></div></a>
+
+    <a href="https://quarare.com" class="card rev" target="_blank"><div class="card-vis cv-legal">
+      <div class="vz-doc"><div class="vz-doc-frame"><div class="vz-doc-lines"><div class="vz-dl"></div><div class="vz-dl"></div><div class="vz-dl"></div><div class="vz-dl"></div><div class="vz-dl"></div><div class="vz-dl"></div></div></div><div class="vz-seal">SEALED</div></div>
+    </div><div class="card-body"><div class="card-meta"><span class="card-dom">Legal</span><span class="card-live">Live</span></div><div class="card-name">Quarare</div><div class="card-url">quarare.com</div><div class="card-q">"Will this expert report hold up?"</div></div></a>
+
+    <a href="https://vigilarx.com" class="card rev" target="_blank"><div class="card-vis cv-research">
+      <div class="vz-net"><div class="vn"></div><div class="vn"></div><div class="vn alert"></div><div class="vn"></div><div class="vn"></div><div class="vn"></div><div class="ve"></div><div class="ve"></div><div class="ve"></div><div class="ve"></div><div class="ve"></div></div>
+    </div><div class="card-body"><div class="card-meta"><span class="card-dom">Research Security</span><span class="card-live">Live</span></div><div class="card-name">Vigilarx</div><div class="card-url">vigilarx.com</div><div class="card-q">"Can we trust this research partner?"</div></div></a>
+
+    <a href="https://cclinic.com" class="card rev" target="_blank"><div class="card-vis cv-health">
+      <div class="vz-wave"><svg class="vw-svg" viewBox="0 0 320 80" preserveAspectRatio="none"><path d="M0 40 Q10 40 15 25 Q18 15 20 40 Q22 52 25 40 Q35 40 40 40 Q50 40 55 25 Q58 15 60 40 Q62 52 65 40 Q75 40 80 40 Q90 40 95 25 Q98 15 100 40 Q102 52 105 40 Q115 40 120 40 Q130 40 135 25 Q138 15 140 40 Q142 52 145 40 Q155 40 160 40 Q170 40 175 25 Q178 15 180 40 Q182 52 185 40 Q195 40 200 40 Q210 40 215 25 Q218 15 220 40 Q222 52 225 40 Q235 40 240 40 Q250 40 255 25 Q258 15 260 40 Q262 52 265 40 Q275 40 280 40 Q290 40 295 25 Q298 15 300 40 Q302 52 305 40 Q315 40 320 40" fill="none" stroke="rgba(255,255,255,.6)" stroke-width="2.5"/><path d="M0 40 Q10 40 15 25 Q18 15 20 40 Q22 52 25 40 Q35 40 40 40 Q50 40 55 25 Q58 15 60 40 Q62 52 65 40 Q75 40 80 40 Q90 40 95 25 Q98 15 100 40 Q102 52 105 40 Q115 40 120 40 Q130 40 135 25 Q138 15 140 40 Q142 52 145 40 Q155 40 160 40 Q170 40 175 25 Q178 15 180 40 Q182 52 185 40 Q195 40 200 40 Q210 40 215 25 Q218 15 220 40 Q222 52 225 40 Q235 40 240 40 Q250 40 255 25 Q258 15 260 40 Q262 52 265 40 Q275 40 280 40 Q290 40 295 25 Q298 15 300 40 Q302 52 305 40 Q315 40 320 40" fill="none" stroke="rgba(255,255,255,.15)" stroke-width="8"/></svg></div>
+    </div><div class="card-body"><div class="card-meta"><span class="card-dom">Healthcare</span><span class="card-live">Live</span></div><div class="card-name">CClinic</div><div class="card-url">cclinic.com</div><div class="card-q">"Can my doctor spend the visit on me?"</div></div></a>
+
+    <a href="https://vainture.com" class="card rev" target="_blank"><div class="card-vis cv-venture">
+      <div class="vz-rad"><svg width="120" height="120" viewBox="0 0 120 120"><circle cx="60" cy="60" r="46" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="7"/><circle cx="60" cy="60" r="46" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="7" stroke-dasharray="240 49" stroke-linecap="round" transform="rotate(-90 60 60)" style="animation:arcFill 5s ease infinite"/><circle cx="60" cy="60" r="34" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="6"/><circle cx="60" cy="60" r="34" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="6" stroke-dasharray="170 44" stroke-linecap="round" transform="rotate(-90 60 60)" style="animation:arcFill 5s ease infinite .4s"/><circle cx="60" cy="60" r="22" fill="none" stroke="rgba(255,255,255,.06)" stroke-width="5"/><circle cx="60" cy="60" r="22" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="5" stroke-dasharray="110 28" stroke-linecap="round" transform="rotate(-90 60 60)" style="animation:arcFill 5s ease infinite .8s"/><text x="60" y="65" text-anchor="middle" font-family="JetBrains Mono" font-size="18" font-weight="800" fill="rgba(255,255,255,.7)">72</text></svg></div>
+    </div><div class="card-body"><div class="card-meta"><span class="card-dom">Venture</span><span class="card-live">Live</span></div><div class="card-name">Vainture</div><div class="card-url">vainture.com</div><div class="card-q">"Is this invention worth pursuing?"</div></div></a>
+
+    <a href="https://midarx.com" class="card rev" target="_blank"><div class="card-vis cv-finance">
+      <div class="vz-div"><div class="vd-center"></div><div class="vd-up"></div><div class="vd-dn"></div><div class="vd-tag">+0.44%</div></div>
+    </div><div class="card-body"><div class="card-meta"><span class="card-dom">Finance</span><span class="card-live">Live</span></div><div class="card-name">Midarx</div><div class="card-url">midarx.com</div><div class="card-q">"Is the bank's exchange rate fair?"</div></div></a>
+
+    <a href="https://thalarx.com" class="card rev" target="_blank"><div class="card-vis cv-payer">
+      <div class="vz-bench">
+        <div class="vb-r"><div class="vb-lbl">EMERGENCY</div><div class="vb-track"><div class="vb-f vb-paid"></div><div class="vb-f vb-fair"></div><div class="vb-mark"></div></div></div>
+        <div class="vb-r"><div class="vb-lbl">ORTHOPEDICS</div><div class="vb-track"><div class="vb-f vb-paid"></div><div class="vb-f vb-fair"></div><div class="vb-mark"></div></div></div>
+        <div class="vb-r"><div class="vb-lbl">RADIOLOGY</div><div class="vb-track"><div class="vb-f vb-paid"></div><div class="vb-f vb-fair"></div><div class="vb-mark"></div></div></div>
+      </div>
+    </div><div class="card-body"><div class="card-meta"><span class="card-dom">Revenue Integrity</span><span class="card-live">Live</span></div><div class="card-name">Thalarx</div><div class="card-url">thalarx.com</div><div class="card-q">"Are we being paid what we're owed?"</div></div></a>
+
+    <a href="https://lillixbio.com" class="card rev" target="_blank"><div class="card-vis cv-biopharma">
+      <div class="vz-fun"><div class="vf-top">450</div><div class="vf-arr">▼</div><div class="vf-bar"><div class="vf-fill"></div></div><div class="vf-bot">36</div><div class="vf-lbl">build list</div></div>
+    </div><div class="card-body"><div class="card-meta"><span class="card-dom">Drug Discovery</span><span class="card-live">Live</span></div><div class="card-name">LillixBio</div><div class="card-url">lillixbio.com</div><div class="card-q">"Which candidates are worth the wet lab?"</div></div></a>
+
+    <a href="https://intelarx.net" class="card rev" target="_blank"><div class="card-vis cv-gov">
+      <div class="vz-gf"><div class="gf-c on"></div><div class="gf-c on"></div><div class="gf-c on"></div><div class="gf-c on"></div><div class="gf-c on"></div><div class="gf-c on"></div><div class="gf-c on"></div><div class="gf-c on"></div><div class="gf-c on"></div><div class="gf-c on"></div><div class="gf-c on"></div><div class="gf-c on"></div><div class="gf-c on"></div><div class="gf-c on"></div><div class="gf-c on"></div><div class="gf-c on"></div><div class="gf-c on"></div><div class="gf-c on"></div></div>
+    </div><div class="card-body"><div class="card-meta"><span class="card-dom">Government</span><span class="card-live">Live</span></div><div class="card-name">Intelarx</div><div class="card-url">intelarx.net</div><div class="card-q">"Is this application compliant?"</div></div></a>
+
+    <a href="https://vermerit.com" class="card rev" target="_blank"><div class="card-vis cv-health">
+      <div class="vz-rank"><div class="vr-c"><div class="vr-b r1"></div><div class="vr-n">1</div></div><div class="vr-c"><div class="vr-b r2"></div><div class="vr-n">2</div></div><div class="vr-c"><div class="vr-b r3"></div><div class="vr-n">3</div></div><div class="vr-c"><div class="vr-b r4"></div><div class="vr-n">4</div></div></div>
+    </div><div class="card-body"><div class="card-meta"><span class="card-dom">Healthcare</span><span class="card-live">Live</span></div><div class="card-name">Vermerit</div><div class="card-url">vermerit.com</div><div class="card-q">"Was every applicant judged fairly?"</div></div></a>
+
   </div>
 </div></section>
 
