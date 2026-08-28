@@ -14,116 +14,189 @@
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Public+Sans:ital,wght@0,300..800;1,300..800&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/celesium.css?v=20260731a">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#141720;--teal:#0D7377;--teal-b:#12978C;--ocean:#1A6B9A;
+  --violet:#6B5CE7;--bronze:#C49A3C;--warm:#F7F6F3;
+  --card-bg:#fff;--card-border:#E8E6E1;
+  --text:#1A1C23;--text2:#52555E;--text3:#8B8E96;
+  --green:#0F8554;--red:#C93535;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',-apple-system,sans-serif;background:var(--warm);color:var(--text);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 48px;height:64px;display:flex;align-items:center;justify-content:space-between;background:rgba(20,23,32,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.06)}
+.nav-logo{font-weight:700;font-size:18px;letter-spacing:-.02em;color:#fff;text-decoration:none}.nav-logo span{color:var(--teal-b)}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{color:rgba(255,255,255,.65);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s}.nav-links a:hover{color:#fff}
+.nav-links a.here{color:#fff;position:relative}
+.nav-links a.here::after{content:'';position:absolute;left:0;right:0;bottom:-7px;height:2px;border-radius:2px;background:var(--teal-b)}
+.nav-burger{display:none;background:none;border:none;cursor:pointer;padding:6px;z-index:101}.nav-burger span{display:block;width:22px;height:2px;background:#fff;margin:5px 0;border-radius:2px;transition:all .3s}.nav-burger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}.nav-burger.open span:nth-child(2){opacity:0}.nav-burger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.nav-cta{background:var(--teal);color:#fff;padding:9px 22px;border-radius:7px;font-weight:600;font-size:13px;text-decoration:none;transition:all .2s}.nav-cta:hover{background:var(--teal-b)}
+
+/* PAGE HERO */
+.phero{position:relative;padding:148px 48px 96px;background:var(--ink);overflow:hidden}
+.phero-g{position:absolute;inset:0;background:radial-gradient(ellipse 55% 60% at 15% 40%,rgba(13,115,119,.45) 0%,transparent 70%),radial-gradient(ellipse 45% 55% at 80% 25%,rgba(26,107,154,.35) 0%,transparent 70%),radial-gradient(ellipse 50% 50% at 62% 100%,rgba(196,154,60,.22) 0%,transparent 70%);filter:blur(60px);animation:mesh 14s ease-in-out infinite alternate}
+@keyframes mesh{0%{transform:translate(0,0) scale(1)}50%{transform:translate(24px,-16px) scale(1.04)}100%{transform:translate(-12px,10px) scale(.98)}}
+.phero-in{position:relative;z-index:1;max-width:1000px;margin:0 auto}
+.phero-ey{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--teal-b);margin-bottom:20px}
+.phero h1{font-size:clamp(36px,5.6vw,66px);font-weight:900;letter-spacing:-.035em;line-height:1.05;color:#fff;max-width:820px}
+.phero h1 em{font-style:normal;background:linear-gradient(135deg,var(--teal-b),#7DD3C0 40%,var(--bronze));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.phero p{margin-top:24px;font-size:clamp(15px,1.7vw,18px);color:rgba(255,255,255,.55);line-height:1.7;max-width:640px}
+
+/* SECTIONS */
+.sec{padding:96px 48px}
+.wrap{max-width:1000px;margin:0 auto}
+.sh{margin-bottom:44px}
+.sh-row{display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap}
+.sh h2{font-size:clamp(28px,3.5vw,44px);font-weight:800;letter-spacing:-.025em;line-height:1.15}
+.sh h2 em{font-style:normal;color:var(--text3);font-weight:500}
+.count{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--text3);white-space:nowrap}
+.lede{font-size:17px;color:var(--text2);line-height:1.75;max-width:660px;margin-top:20px}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal-b);font-weight:600;display:block;margin-bottom:10px}
+
+/* CARDS */
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.c{background:var(--card-bg);border:1px solid var(--card-border);border-radius:16px;padding:28px;transition:all .3s}
+.c:hover{border-color:var(--teal);transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,.08)}
+.c h3{font-size:20px;font-weight:700;letter-spacing:-.018em;margin-bottom:11px}
+.c p{font-size:14.5px;color:var(--text2);line-height:1.65}
+.c.path{background:transparent;border-style:dashed;border-color:#D8D5CE}
+.c.path h3{color:var(--bronze)}
+.c.path:hover{border-color:var(--bronze);box-shadow:none}
+
+/* DARK BAND */
+.dark{background:var(--ink);padding:96px 48px;position:relative;overflow:hidden;color:#fff}
+.dark-g{position:absolute;inset:0;background:radial-gradient(ellipse 60% 90% at 50% 110%,rgba(13,115,119,.18),transparent 70%)}
+.dark .wrap{position:relative;z-index:1}
+.ent{border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.02);border-radius:16px;padding:32px 28px;transition:all .3s}
+.ent:hover{border-color:rgba(18,151,140,.4);transform:translateY(-4px)}
+.ent h3{font-size:21px;font-weight:700;color:#fff;letter-spacing:-.018em;margin-bottom:16px}
+.ent p{font-size:14.5px;color:rgba(255,255,255,.55);line-height:1.7}
+.ent p strong{color:#fff;font-weight:600}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:20px}
+.tags span{font-family:'JetBrains Mono',monospace;font-size:10px;padding:5px 11px;border-radius:20px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);color:rgba(255,255,255,.5);letter-spacing:.05em}
+
+/* IP BAND */
+.ipb{margin-top:56px;padding:40px 32px;border-radius:16px;background:linear-gradient(135deg,rgba(196,154,60,.14),rgba(196,154,60,.04));border:1px solid rgba(196,154,60,.22);display:flex;align-items:center;gap:40px;flex-wrap:wrap}
+.ip-fig{text-align:center;flex-shrink:0}
+.ip-fig b{font-family:'JetBrains Mono',monospace;font-size:60px;font-weight:700;color:var(--bronze);line-height:1;display:block}
+.ip-fig small{display:block;margin-top:8px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.35);max-width:130px}
+.ipb h3{font-size:20px;font-weight:700;color:#fff;letter-spacing:-.018em;margin-bottom:10px}
+.ipb p{font-size:14.5px;color:rgba(255,255,255,.55);line-height:1.7;max-width:620px}
+.ipb p em{font-style:italic;color:var(--bronze)}
+
+/* CTA */
+.cta{padding:110px 48px;background:var(--ink);text-align:center;position:relative;overflow:hidden;border-top:1px solid rgba(255,255,255,.06)}
+.cta-g{position:absolute;inset:0;background:radial-gradient(ellipse 55% 80% at 50% 0%,rgba(13,115,119,.2),transparent 70%)}
+.cta-in{position:relative;z-index:1;max-width:660px;margin:0 auto}
+.cta-ey{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--teal-b);margin-bottom:16px;font-weight:600}
+.cta h2{font-size:clamp(28px,4vw,50px);font-weight:900;letter-spacing:-.035em;color:#fff;margin-bottom:16px;line-height:1.1}
+.cta h2 em{font-style:normal;background:linear-gradient(90deg,var(--teal-b),var(--bronze));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.cta p{color:rgba(255,255,255,.5);font-size:17px;line-height:1.65;margin:0 auto 38px;max-width:490px}
+.cta-act{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn-t{background:var(--teal);color:#fff;padding:15px 34px;border-radius:8px;font-weight:600;font-size:15px;text-decoration:none;transition:all .3s;box-shadow:0 0 24px rgba(13,115,119,.3)}.btn-t:hover{background:var(--teal-b);transform:translateY(-2px)}
+.btn-o{color:rgba(255,255,255,.7);padding:15px 34px;border-radius:8px;font-weight:500;font-size:15px;text-decoration:none;border:1px solid rgba(255,255,255,.14);transition:all .2s}.btn-o:hover{color:#fff;border-color:rgba(255,255,255,.28)}
+
+/* FOOTER */
+footer{padding:48px 48px 32px;background:var(--ink);color:rgba(255,255,255,.5);display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px}
+.ft-logo{font-weight:700;font-size:16px;color:#fff;margin-bottom:8px}.ft-logo span{color:var(--teal-b)}
+.ft-addr{font-size:13px;line-height:1.6}.ft-addr a{color:rgba(255,255,255,.5)}
+.ft-r{text-align:right}.ft-links{display:flex;gap:24px;margin-bottom:8px;flex-wrap:wrap;justify-content:flex-end}
+.ft-links a{font-size:13px;color:rgba(255,255,255,.4);text-decoration:none}.ft-links a:hover{color:rgba(255,255,255,.7)}
+.ft-copy{font-size:12px;color:rgba(255,255,255,.2)}
+
+/* REVEAL */
+.rev{opacity:0;transform:translateY(22px);transition:opacity .65s cubic-bezier(.16,1,.3,1),transform .65s cubic-bezier(.16,1,.3,1)}
+.rev.vis{opacity:1;transform:none}
+
+@media(max-width:768px){
+nav{padding:0 20px}.nav-burger{display:flex;flex-direction:column;justify-content:center}
+.nav-links{display:none;position:fixed;top:64px;left:0;right:0;background:rgba(20,23,32,.97);backdrop-filter:blur(16px);flex-direction:column;padding:24px 20px;gap:0;border-top:1px solid rgba(255,255,255,.06)}
+.nav-links.nav-open{display:flex}.nav-links a{padding:14px 0;font-size:16px;border-bottom:1px solid rgba(255,255,255,.06)}
+.nav-links a.here::after{display:none}.nav-cta{margin-top:8px;text-align:center}
+.phero{padding:108px 20px 64px}.sec{padding:64px 20px}.dark{padding:64px 20px}.cta{padding:76px 20px}
+.grid2,.grid3{grid-template-columns:1fr}
+.ipb{padding:32px 22px;gap:24px;flex-direction:column;text-align:center}.ip-fig small{max-width:none}
+.cta-act{flex-direction:column;align-items:center}.btn-t,.btn-o{width:100%;max-width:320px;text-align:center}
+footer{padding:32px 20px;flex-direction:column;align-items:flex-start}.ft-r{text-align:left}.ft-links{justify-content:flex-start}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important}.rev{opacity:1;transform:none}}
+</style>
 </head>
 <body id="top">
-<header>
-  <nav class="nav">
-    <a class="logo" href="/">Celesium<em>AI</em></a>
-    <div class="nav-links">
-      <a href="/#plain">What we do</a>
-      <a href="portfolio.html">Solutions</a>
-      <a href="/library">Library</a>
-      <a href="approach.html">How it works</a>
-      <a href="security.html" class="here">Security</a>
-      <a href="leadership.html">Leadership</a>
-      <a href="contact.html" class="btn btn-gold" style="padding:.5rem 1.1rem;border-width:1.5px">Request a demo</a>
-    </div>
-  </nav>
-</header>
+<nav><a href="/" class="nav-logo">Celesium<span>AI</span></a><button class="nav-burger" aria-label="Menu" onclick="this.classList.toggle('open');document.querySelector('.nav-links').classList.toggle('nav-open')"><span></span><span></span><span></span></button><div class="nav-links"><a href="/portfolio.html">Solutions</a><a href="/approach.html">How it works</a><a href="/security.html" class="here">Security</a><a href="/leadership.html">Leadership</a><a href="/contact.html" class="nav-cta">Request a demo</a></div></nav>
+
 <main>
-<div class="masthead">
-  <div class="masthead-inner">
-    <div class="eyebrow">Security · Trust</div>
-    <h1>Your data stays <em>your data.</em></h1>
-    <p>Enterprise AI on commercial terms. Your information is never used to train models, it stays isolated to your tenancy, and every claim on this page is one we will put in writing.</p>
-  </div>
-</div>
+<section class="phero"><div class="phero-g"></div><div class="phero-in">
+  <div class="phero-ey">Security · Trust</div>
+  <h1>Your data stays <em>your data.</em></h1>
+  <p>Enterprise AI on commercial terms. Your information is never used to train models, it stays isolated to your tenancy, and every claim on this page is one we will put in writing.</p>
+</div></section>
 
-<section>
-  <div class="rule-head rv"><h2>What is <em>true today</em></h2><span class="count">In production</span></div>
-  <p class="plain-lede rv">These are controls that are in place now, not roadmap items. Where something is still on the path, we say so on this page rather than leaving you to find out later.</p>
-  <div class="ctrl-grid">
-    <div class="ctrl rv"><h3>Your data never trains a model</h3><p>Client data is analyzed, reported, and left in place. It is never used to train shared or public models, ours or anyone else's. This is a contractual commitment, not a setting.</p></div>
-    <div class="ctrl rv"><h3>Isolated by tenant</h3><p>Each customer's data and configuration run in their own tenancy. Nothing crosses into a shared engine or another customer's environment.</p></div>
-    <div class="ctrl rv"><h3>Server-side only access</h3><p>Credentials and privileged operations stay server-side. The browser never holds the keys to your data.</p></div>
-    <div class="ctrl rv"><h3>Tamper-evident records</h3><p>Each analysis is committed to a hash chain. A later change to a record breaks the chain, so tampering is evident rather than silent.</p></div>
-    <div class="ctrl rv"><h3>Deterministic where it matters</h3><p>Rules that should be deterministic are deterministic, each with a stable identifier. The same inputs produce the same output, which is what makes a result reproducible in review.</p></div>
-    <div class="ctrl rv"><h3>Disclosed inference</h3><p>Where a platform infers rather than reads, it records that it inferred, and why. Uncertainty appears in the output instead of hiding inside it.</p></div>
+<section class="sec"><div class="wrap">
+  <div class="sh rev">
+    <div class="sh-row"><h2>What is <em>true today</em></h2><span class="count">In production</span></div>
+    <p class="lede">These are controls that are in place now, not roadmap items. Where something is still on the path, we say so on this page rather than leaving you to find out later.</p>
+  </div>
+  <div class="grid2">
+    <div class="c rev"><h3>Your data never trains a model</h3><p>Client data is analyzed, reported, and left in place. It is never used to train shared or public models, ours or anyone else's. This is a contractual commitment, not a setting.</p></div>
+    <div class="c rev"><h3>Isolated by tenant</h3><p>Each customer's data and configuration run in their own tenancy. Nothing crosses into a shared engine or another customer's environment.</p></div>
+    <div class="c rev"><h3>Server-side only access</h3><p>Credentials and privileged operations stay server-side. The browser never holds the keys to your data.</p></div>
+    <div class="c rev"><h3>Tamper-evident records</h3><p>Each analysis is committed to a hash chain. A later change to a record breaks the chain, so tampering is evident rather than silent.</p></div>
+    <div class="c rev"><h3>Deterministic where it matters</h3><p>Rules that should be deterministic are deterministic, each with a stable identifier. The same inputs produce the same output, which is what makes a result reproducible in review.</p></div>
+    <div class="c rev"><h3>Disclosed inference</h3><p>Where a platform infers rather than reads, it records that it inferred, and why. Uncertainty appears in the output instead of hiding inside it.</p></div>
   </div>
 
-  <div class="rule-head rv" style="margin-top:3.4rem"><h2>On the <em>path</em></h2><span class="count">Underway</span></div>
-  <div class="ctrl-grid">
-    <div class="ctrl rv path"><h3>SOC 2 Type II</h3><p>Underway. We will publish the report when it exists rather than describing it before it does.</p></div>
-    <div class="ctrl rv path"><h3>FedRAMP</h3><p>On the path, driven by our federal and research-security work.</p></div>
+  <div class="sh rev" style="margin-top:72px">
+    <div class="sh-row"><h2>On the <em>path</em></h2><span class="count">Underway</span></div>
   </div>
-</section>
+  <div class="grid2">
+    <div class="c path rev"><h3>SOC 2 Type II</h3><p>Underway. We will publish the report when it exists rather than describing it before it does.</p></div>
+    <div class="c path rev"><h3>FedRAMP</h3><p>On the path, driven by our federal and research-security work.</p></div>
+  </div>
+</div></section>
 
-<div class="band">
-<section class="band-inner" style="padding-top:4rem;padding-bottom:4rem">
-  <div class="ent-grid">
-    <div class="ent rv">
-      <div class="ent-head"><span class="eyebrow">Who owns this</span><h3>A named security lead</h3></div>
-      <div class="ent-body">
-        <p>Our security program is led by <strong>Dr. Marian Zaki</strong>, Director and lead security architect. She owns the threat model and the security architecture behind every platform, and she is the person your security team will talk to.</p>
-        <div class="tags"><span>Threat modeling</span><span>Architecture review</span><span>Vendor questionnaires</span></div>
-      </div>
+<section class="dark"><div class="dark-g"></div><div class="wrap">
+  <div class="grid2">
+    <div class="ent rev">
+      <span class="eyebrow">Who owns this</span>
+      <h3>A named security lead</h3>
+      <p>Our security program is led by <strong>Dr. Marian Zaki</strong>, Director and lead security architect. She owns the threat model and the security architecture behind every platform, and she is the person your security team will talk to.</p>
+      <div class="tags"><span>Threat modeling</span><span>Architecture review</span><span>Vendor questionnaires</span></div>
     </div>
-    <div class="ent rv">
-      <div class="ent-head"><span class="eyebrow">Diligence</span><h3>What we will send you</h3></div>
-      <div class="ent-body">
-        <p>Architecture overview, data-flow description, tenancy and access model, subprocessor list, and our answers to your security questionnaire. If something is not yet in place, the answer says so.</p>
-        <div class="tags"><span>Architecture overview</span><span>Data flow</span><span>Subprocessors</span><span>Questionnaire</span></div>
-      </div>
+    <div class="ent rev">
+      <span class="eyebrow">Diligence</span>
+      <h3>What we will send you</h3>
+      <p>Architecture overview, data-flow description, tenancy and access model, subprocessor list, and our answers to your security questionnaire. If something is not yet in place, the answer says so.</p>
+      <div class="tags"><span>Architecture overview</span><span>Data flow</span><span>Subprocessors</span><span>Questionnaire</span></div>
     </div>
   </div>
-  <div class="ip-band rv">
-    <div class="ip-figure"><b class="cnt" data-n="14">0</b><small>U.S. patent applications</small></div>
+  <div class="ipb rev">
+    <div class="ip-fig"><b class="cnt" data-n="14">0</b><small>U.S. patent applications</small></div>
     <div>
       <h3>The technology is our own.</h3>
       <p>Every product runs on the same defensibility layer, built here — how an answer is tied to its source, how the work is made checkable, how your data is kept separate from everyone else's. That layer is covered by fourteen U.S. patent applications, which is why every platform in the portfolio carries <em>Pat. pend.</em></p>
     </div>
   </div>
-</section>
-</div>
+</div></section>
 
-<section class="final rv">
-  <span class="fig-tag">Next step</span>
+<section class="cta"><div class="cta-g"></div><div class="cta-in rev">
+  <div class="cta-ey">Next step</div>
   <h2>Send us your <em>questionnaire.</em></h2>
   <p>We would rather answer your security team's questions early than late.</p>
-  <div class="hero-ctas" style="justify-content:center">
-    <a class="btn btn-solid" href="approach.html">How it works</a>
-    <a class="btn btn-gold" href="contact.html">Contact us</a>
+  <div class="cta-act">
+    <a class="btn-t" href="/contact.html">Contact us</a>
+    <a class="btn-o" href="/approach.html">How it works</a>
   </div>
-</section>
-
+</div></section>
 </main>
-<footer>
-  <div class="foot">
-    <div>
-      <a class="logo" href="/" style="margin-bottom:.8rem;display:inline-block">Celesium<em>AI</em></a>
-      <p>AI platforms for regulated industries. Every answer comes with the rule behind it.</p>
-    </div>
-    <div>
-      <h4>Solutions</h4>
-      <a href="portfolio.html">Revenue Integrity</a><a href="portfolio.html">AML / BSA</a><a href="portfolio.html">Trade Compliance</a><a href="portfolio.html">Litigation &amp; eDiscovery</a><a href="portfolio.html">ESG Reporting</a>
-    </div>
-    <div>
-      <h4>Studio</h4>
-      <a href="approach.html">How it works</a><a href="security.html">Security &amp; trust</a><a href="leadership.html">Leadership</a><a href="contact.html">Contact</a>
-    </div>
-    <div>
-      <h4>Houston, TX</h4>
-      <p>6222 Richmond, Ste 170<br>Houston, TX 77057</p>
-      <a href="mailto:info@celesium.ai">info@celesium.ai</a>
-    </div>
-  </div>
-  <div class="foot-base">
-    <span>© 2026 CelesiumAI LLC · All rights reserved</span>
-    <a href="#top" style="color:inherit">Back to top ↑</a>
-  </div>
-</footer>
+
+<footer><div><div class="ft-logo">Celesium<span>AI</span></div><div class="ft-addr">6222 Richmond, Ste 170<br>Houston, TX 77057<br><a href="mailto:info@celesium.ai">info@celesium.ai</a></div></div><div class="ft-r"><div class="ft-links"><a href="/portfolio.html">Solutions</a><a href="/approach.html">How it works</a><a href="/security.html">Security</a><a href="/leadership.html">Leadership</a><a href="/contact.html">Contact</a></div><div class="ft-copy">© 2026 CelesiumAI LLC</div></div></footer>
 <script>
 const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
 function countUp(el){
@@ -138,8 +211,8 @@ const cio=new IntersectionObserver(es=>es.forEach(e=>{
   if(e.isIntersecting){countUp(e.target);cio.unobserve(e.target)}}),{threshold:.5});
 document.querySelectorAll('.cnt').forEach(el=>cio.observe(el));
 const io=new IntersectionObserver(es=>es.forEach(e=>{
-  if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
-document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+  if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rev').forEach(el=>io.observe(el));
 </script>
 </body>
 </html>

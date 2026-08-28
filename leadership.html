@@ -14,67 +14,163 @@
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Public+Sans:ital,wght@0,300..800;1,300..800&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/celesium.css?v=20260731a">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#141720;--teal:#0D7377;--teal-b:#12978C;--ocean:#1A6B9A;
+  --violet:#6B5CE7;--bronze:#C49A3C;--warm:#F7F6F3;
+  --card-bg:#fff;--card-border:#E8E6E1;
+  --text:#1A1C23;--text2:#52555E;--text3:#8B8E96;
+  --green:#0F8554;--red:#C93535;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',-apple-system,sans-serif;background:var(--warm);color:var(--text);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 48px;height:64px;display:flex;align-items:center;justify-content:space-between;background:rgba(20,23,32,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.06)}
+.nav-logo{font-weight:700;font-size:18px;letter-spacing:-.02em;color:#fff;text-decoration:none}.nav-logo span{color:var(--teal-b)}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{color:rgba(255,255,255,.65);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s}.nav-links a:hover{color:#fff}
+.nav-links a.here{color:#fff;position:relative}
+.nav-links a.here::after{content:'';position:absolute;left:0;right:0;bottom:-7px;height:2px;border-radius:2px;background:var(--teal-b)}
+.nav-burger{display:none;background:none;border:none;cursor:pointer;padding:6px;z-index:101}.nav-burger span{display:block;width:22px;height:2px;background:#fff;margin:5px 0;border-radius:2px;transition:all .3s}.nav-burger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}.nav-burger.open span:nth-child(2){opacity:0}.nav-burger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.nav-cta{background:var(--teal);color:#fff;padding:9px 22px;border-radius:7px;font-weight:600;font-size:13px;text-decoration:none;transition:all .2s}.nav-cta:hover{background:var(--teal-b)}
+
+/* PAGE HERO */
+.phero{position:relative;padding:148px 48px 96px;background:var(--ink);overflow:hidden}
+.phero-g{position:absolute;inset:0;background:radial-gradient(ellipse 55% 60% at 15% 40%,rgba(13,115,119,.45) 0%,transparent 70%),radial-gradient(ellipse 45% 55% at 80% 25%,rgba(107,92,231,.3) 0%,transparent 70%),radial-gradient(ellipse 50% 50% at 62% 100%,rgba(196,154,60,.25) 0%,transparent 70%);filter:blur(60px);animation:mesh 14s ease-in-out infinite alternate}
+@keyframes mesh{0%{transform:translate(0,0) scale(1)}50%{transform:translate(24px,-16px) scale(1.04)}100%{transform:translate(-12px,10px) scale(.98)}}
+.phero-in{position:relative;z-index:1;max-width:1000px;margin:0 auto}
+.phero-ey{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--teal-b);margin-bottom:20px}
+.phero h1{font-size:clamp(36px,5.6vw,66px);font-weight:900;letter-spacing:-.035em;line-height:1.05;color:#fff;max-width:820px}
+.phero h1 em{font-style:normal;background:linear-gradient(135deg,var(--teal-b),#7DD3C0 40%,var(--bronze));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.phero p{margin-top:24px;font-size:clamp(15px,1.7vw,18px);color:rgba(255,255,255,.55);line-height:1.7;max-width:640px}
+
+/* SECTIONS */
+.sec{padding:96px 48px}
+.wrap{max-width:1000px;margin:0 auto}
+.sh{margin-bottom:32px}
+.sh.gap{margin-top:80px}
+.sh-row{display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap;border-bottom:1px solid var(--card-border);padding-bottom:18px}
+.sh h2{font-size:clamp(26px,3.2vw,40px);font-weight:800;letter-spacing:-.025em;line-height:1.15}
+.sh h2 em{font-style:normal;color:var(--text3);font-weight:500}
+.count{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--text3);white-space:nowrap}
+.lede{font-size:17px;color:var(--text2);line-height:1.75;max-width:660px;margin-top:20px}
+.fig{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-b);border:1px solid rgba(18,151,140,.35);padding:4px 10px;border-radius:4px;display:inline-block;margin-bottom:16px}
+
+/* ROSTER */
+.roster{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.pers{background:var(--card-bg);border:1px solid var(--card-border);border-radius:16px;padding:28px;transition:all .3s;display:flex;flex-direction:column}
+.pers:hover{border-color:var(--teal);transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,.08)}
+.pers .role{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);font-weight:600}
+.pers h3{font-size:23px;font-weight:700;letter-spacing:-.022em;margin:12px 0 5px}
+.pers .sub{font-size:13px;color:var(--text3);line-height:1.5;margin-bottom:14px}
+.pers p{font-size:14.5px;color:var(--text2);line-height:1.65;flex:1}
+.pers .li{display:inline-flex;align-items:center;gap:6px;align-self:flex-start;margin-top:18px;font-size:13px;font-weight:600;color:var(--teal);text-decoration:none;transition:color .2s}
+.pers .li::after{content:'→';transition:transform .2s}
+.pers .li:hover{color:var(--teal-b)}
+.pers .li:hover::after{transform:translateX(3px)}
+
+/* DARK BAND */
+.dark{background:var(--ink);padding:96px 48px;position:relative;overflow:hidden;color:#fff}
+.dark-g{position:absolute;inset:0;background:radial-gradient(ellipse 60% 90% at 50% 110%,rgba(13,115,119,.18),transparent 70%)}
+.dark .wrap{position:relative;z-index:1}
+.dark .sh h2{color:#fff}
+.dark .sh h2 em{font-style:normal;background:linear-gradient(90deg,var(--teal-b),var(--bronze));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:800}
+.dark .lede{color:rgba(255,255,255,.5)}
+.dark .sh-row{border-bottom:none;padding-bottom:0}
+.struct{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.sc{border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.02);border-radius:16px;padding:28px;transition:all .3s}
+.sc:hover{border-color:rgba(18,151,140,.4);transform:translateY(-4px)}
+.sc h4{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal-b);font-weight:600;margin-bottom:12px}
+.sc h3{font-size:19px;font-weight:700;color:#fff;letter-spacing:-.018em;margin-bottom:12px;line-height:1.3}
+.sc h3 em{font-style:normal;color:var(--teal-b)}
+.sc p{font-size:14.5px;color:rgba(255,255,255,.5);line-height:1.65}
+.pull{margin-top:56px;padding-top:40px;border-top:1px solid rgba(255,255,255,.08);font-size:clamp(20px,2.7vw,30px);font-weight:600;font-style:italic;line-height:1.4;color:#fff;letter-spacing:-.022em;max-width:820px}
+.pull em{font-style:italic;background:linear-gradient(90deg,var(--teal-b),var(--bronze));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.pull cite{display:block;margin-top:18px;font-family:'JetBrains Mono',monospace;font-size:11px;font-style:normal;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.3)}
+
+/* CTA */
+.cta{padding:110px 48px;background:var(--ink);text-align:center;position:relative;overflow:hidden;border-top:1px solid rgba(255,255,255,.06)}
+.cta-g{position:absolute;inset:0;background:radial-gradient(ellipse 55% 80% at 50% 0%,rgba(13,115,119,.2),transparent 70%)}
+.cta-in{position:relative;z-index:1;max-width:660px;margin:0 auto}
+.cta-ey{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--teal-b);margin-bottom:16px;font-weight:600}
+.cta h2{font-size:clamp(28px,4vw,50px);font-weight:900;letter-spacing:-.035em;color:#fff;margin-bottom:16px;line-height:1.1}
+.cta h2 em{font-style:normal;background:linear-gradient(90deg,var(--teal-b),var(--bronze));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.cta p{color:rgba(255,255,255,.5);font-size:17px;line-height:1.65;margin:0 auto 38px;max-width:490px}
+.cta-act{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn-t{background:var(--teal);color:#fff;padding:15px 34px;border-radius:8px;font-weight:600;font-size:15px;text-decoration:none;transition:all .3s;box-shadow:0 0 24px rgba(13,115,119,.3)}.btn-t:hover{background:var(--teal-b);transform:translateY(-2px)}
+.btn-o{color:rgba(255,255,255,.7);padding:15px 34px;border-radius:8px;font-weight:500;font-size:15px;text-decoration:none;border:1px solid rgba(255,255,255,.14);transition:all .2s}.btn-o:hover{color:#fff;border-color:rgba(255,255,255,.28)}
+
+/* FOOTER */
+footer{padding:48px 48px 32px;background:var(--ink);color:rgba(255,255,255,.5);display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px}
+.ft-logo{font-weight:700;font-size:16px;color:#fff;margin-bottom:8px}.ft-logo span{color:var(--teal-b)}
+.ft-addr{font-size:13px;line-height:1.6}.ft-addr a{color:rgba(255,255,255,.5)}
+.ft-r{text-align:right}.ft-links{display:flex;gap:24px;margin-bottom:8px;flex-wrap:wrap;justify-content:flex-end}
+.ft-links a{font-size:13px;color:rgba(255,255,255,.4);text-decoration:none}.ft-links a:hover{color:rgba(255,255,255,.7)}
+.ft-copy{font-size:12px;color:rgba(255,255,255,.2)}
+
+/* REVEAL */
+.rev{opacity:0;transform:translateY(22px);transition:opacity .65s cubic-bezier(.16,1,.3,1),transform .65s cubic-bezier(.16,1,.3,1)}
+.rev.vis{opacity:1;transform:none}
+
+@media(max-width:768px){
+nav{padding:0 20px}.nav-burger{display:flex;flex-direction:column;justify-content:center}
+.nav-links{display:none;position:fixed;top:64px;left:0;right:0;background:rgba(20,23,32,.97);backdrop-filter:blur(16px);flex-direction:column;padding:24px 20px;gap:0;border-top:1px solid rgba(255,255,255,.06)}
+.nav-links.nav-open{display:flex}.nav-links a{padding:14px 0;font-size:16px;border-bottom:1px solid rgba(255,255,255,.06)}
+.nav-links a.here::after{display:none}.nav-cta{margin-top:8px;text-align:center}
+.phero{padding:108px 20px 64px}.sec{padding:64px 20px}.dark{padding:64px 20px}.cta{padding:76px 20px}
+.roster,.struct{grid-template-columns:1fr}.sh.gap{margin-top:56px}
+.cta-act{flex-direction:column;align-items:center}.btn-t,.btn-o{width:100%;max-width:320px;text-align:center}
+footer{padding:32px 20px;flex-direction:column;align-items:flex-start}.ft-r{text-align:left}.ft-links{justify-content:flex-start}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important}.rev{opacity:1;transform:none}}
+</style>
 </head>
 <body id="top">
-<header>
-  <nav class="nav">
-    <a class="logo" href="/">Celesium<em>AI</em></a>
-    <div class="nav-links">
-      <a href="/#plain">What we do</a>
-      <a href="portfolio.html">Solutions</a>
-      <a href="/library">Library</a>
-      <a href="approach.html">How it works</a>
-      <a href="security.html">Security</a>
-      <a href="leadership.html" class="here">Leadership</a>
-      <a href="contact.html" class="btn btn-gold" style="padding:.5rem 1.1rem;border-width:1.5px">Request a demo</a>
-    </div>
-  </nav>
-</header>
-<main>
-<div class="masthead">
-  <div class="masthead-inner">
-    <div class="eyebrow">Leadership · The studio</div>
-    <h1>People who <em>operate.</em></h1>
-    <p>The team is small by design: operators, directors, advisors, and co-founders who have built and run real businesses, not pure technologists who haven't.</p>
-  </div>
-</div>
+<nav><a href="/" class="nav-logo">Celesium<span>AI</span></a><button class="nav-burger" aria-label="Menu" onclick="this.classList.toggle('open');document.querySelector('.nav-links').classList.toggle('nav-open')"><span></span><span></span><span></span></button><div class="nav-links"><a href="/portfolio.html">Solutions</a><a href="/approach.html">How it works</a><a href="/security.html">Security</a><a href="/leadership.html" class="here">Leadership</a><a href="/contact.html" class="nav-cta">Request a demo</a></div></nav>
 
-<section>
-  <div class="rule-head rv">
-    <h2>Operating <em>leadership</em></h2>
-    <span class="count">Day-to-day</span>
+<main>
+<section class="phero"><div class="phero-g"></div><div class="phero-in">
+  <div class="phero-ey">Leadership · The studio</div>
+  <h1>People who <em>operate.</em></h1>
+  <p>The team is small by design: operators, directors, advisors, and co-founders who have built and run real businesses, not pure technologists who haven't.</p>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <div class="sh rev">
+    <div class="sh-row"><h2>Operating <em>leadership</em></h2><span class="count">Day-to-day</span></div>
   </div>
-  <div class="roster grp-ops">
-    <div class="pers rv">
+  <div class="roster">
+    <div class="pers rev">
       <div class="role">Senior Director</div>
       <h3>Michael Rome</h3>
       <div class="sub">Business development · Enterprise relationships</div>
       <p>Leads business development and corporate relationship management, anchoring the studio's relationships with large enterprises and Fortune 500 partners.</p>
       <a class="li" href="https://www.linkedin.com/in/mike-rome-69700a23/">LinkedIn</a>
     </div>
-    <div class="pers rv">
+    <div class="pers rev">
       <div class="role">Senior Director</div>
       <h3>Phillip Phan, MD</h3>
       <div class="sub">Physician · Houston</div>
       <p>Physician and Senior Director. Drives healthcare and clinical-AI strategy and helps lead product development across the active portfolio.</p>
       <a class="li" href="https://www.linkedin.com/in/phillip-p-phan-9421a21b1/">LinkedIn</a>
     </div>
-    <div class="pers rv">
+    <div class="pers rev">
       <div class="role">Chief AI Architect</div>
       <h3>John Marchesini</h3>
       <div class="sub">AI architecture · Engineering practice</div>
       <p>Chief AI Architect. Sets the technical direction of the platform layer shared by every product, and reviews the engineering practice behind what ships.</p>
     </div>
-    <div class="pers rv">
+    <div class="pers rev">
       <div class="role">Director</div>
       <h3>Marian Zaki, PhD</h3>
       <div class="sub">Cybersecurity · Security architecture</div>
       <p>The studio's cybersecurity expert and lead security architect. Marian shapes the threat model and security architecture behind our platforms, and the systems that let regulated buyers trust them.</p>
       <a class="li" href="https://www.linkedin.com/in/marian-zaki/">LinkedIn</a>
     </div>
-    <div class="pers rv">
+    <div class="pers rev">
       <div class="role">Director</div>
       <h3>Greggory Keiffer, PhD</h3>
       <div class="sub">Operations · Business development</div>
@@ -83,12 +179,11 @@
     </div>
   </div>
 
-  <div class="rule-head rv">
-    <h2>Advisory <em>chair</em></h2>
-    <span class="count">Counsel</span>
+  <div class="sh gap rev">
+    <div class="sh-row"><h2>Advisory <em>chair</em></h2><span class="count">Counsel</span></div>
   </div>
-  <div class="roster grp-adv">
-    <div class="pers rv">
+  <div class="roster">
+    <div class="pers rev">
       <div class="role">Advisory Co-Chair</div>
       <h3>Mark Czubachowski</h3>
       <div class="sub">Healthcare operators · Capital network</div>
@@ -97,18 +192,17 @@
     </div>
   </div>
 
-  <div class="rule-head rv">
-    <h2><em>Co-founders</em></h2>
-    <span class="count">Original build</span>
+  <div class="sh gap rev">
+    <div class="sh-row"><h2><em>Co-founders</em></h2><span class="count">Original build</span></div>
   </div>
-  <div class="roster grp-fnd">
-    <div class="pers rv">
+  <div class="roster">
+    <div class="pers rev">
       <div class="role">Co-founder</div>
       <h3>Ian Phan</h3>
       <div class="sub">Engineering · Original architect, BillXM</div>
       <p>Original architect of BillXM. Brings the engineering instinct and willingness to ship that defines how the studio prototypes new platforms.</p>
     </div>
-    <div class="pers rv">
+    <div class="pers rev">
       <div class="role">Co-founder</div>
       <h3>Grayson Phan</h3>
       <div class="sub">Product · Original architect, Vigilarx</div>
@@ -116,106 +210,67 @@
     </div>
   </div>
 
-  <div class="rule-head rv">
-    <h2>Managing <em>directors</em></h2>
-    <span class="count">Legal · Capital</span>
+  <div class="sh gap rev">
+    <div class="sh-row"><h2>Managing <em>directors</em></h2><span class="count">Legal · Capital</span></div>
   </div>
-  <div class="roster grp-md">
-    <div class="pers rv">
+  <div class="roster">
+    <div class="pers rev">
       <div class="role">Managing Director</div>
       <h3>Marty Hill, JD</h3>
       <div class="sub">Legal · Strategic partnerships</div>
       <p>Trial attorney and partner at Pagel, Davis &amp; Hill. Anchors the studio's legal-tech vertical, including the BillXM enterprise relationship serving personal-injury defense practices.</p>
     </div>
-    <div class="pers rv">
+    <div class="pers rev">
       <div class="role">Managing Director</div>
       <h3>Jonathan Ramirez</h3>
       <div class="sub">Operations · Investments</div>
       <p>Managing Director at Celesium Capital. Leads operations and capital structure across CelesiumAI and the broader Celesium platform.</p>
     </div>
   </div>
-</section>
+</div></section>
 
-<div class="band">
-<section class="band-inner" style="padding-top:4rem;padding-bottom:4rem">
-  <div class="sec-head rv">
-    <span class="fig-tag">FIG. A</span>
-    <h2>The <em>structure.</em></h2>
-    <p>CelesiumAI LLC is a Texas company headquartered in Houston, incubated under and operated alongside Celesium Capital.</p>
+<section class="dark"><div class="dark-g"></div><div class="wrap">
+  <div class="sh rev">
+    <span class="fig">FIG. A</span>
+    <div class="sh-row"><h2>The <em>structure.</em></h2></div>
+    <p class="lede">CelesiumAI LLC is a Texas company headquartered in Houston, incubated under and operated alongside Celesium Capital.</p>
   </div>
-  <div class="struct">
-    <div class="rv">
+  <div class="struct" style="margin-top:48px">
+    <div class="sc rev">
       <h4>Form</h4>
       <h3>CelesiumAI <em>LLC</em></h3>
       <p>A single Texas limited liability company at 6222 Richmond, Ste 170, Houston, TX 77057. Every platform in the portfolio is a product of that one company, each with its own site and its own separate database.</p>
     </div>
-    <div class="rv">
+    <div class="sc rev">
       <h4>Parent</h4>
       <h3>Operated under <em>Celesium Capital</em></h3>
       <p>CelesiumAI is the technology arm of Celesium Capital, a Houston private equity firm focused on healthcare, technology, and real estate. The platform provides governance, capital, and institutional relationships.</p>
     </div>
-    <div class="rv">
+    <div class="sc rev">
       <h4>Where</h4>
       <h3>Houston · Texas Medical <em>Center</em></h3>
       <p>We work in proximity to the largest medical complex in the world. Active collaborations with faculty at Baylor College of Medicine, Rice University, MD Anderson, and the Texas Medical Center inform every healthcare and research-security platform we build.</p>
     </div>
   </div>
-  <blockquote class="pull rv">We don't grow the team to grow the team. We add operators when the work <em>demands</em> them.<cite>On hiring posture</cite></blockquote>
-</section>
-</div>
+  <blockquote class="pull rev">We don't grow the team to grow the team. We add operators when the work <em>demands</em> them.<cite>On hiring posture</cite></blockquote>
+</div></section>
 
-<section class="final rv">
-  <span class="fig-tag">Work with us</span>
+<section class="cta"><div class="cta-g"></div><div class="cta-in rev">
+  <div class="cta-ey">Work with us</div>
   <h2>Small by design. <em>Deep</em> where it counts.</h2>
   <p>Tell us the one decision costing your team the most, and we'll show you the platform for it.</p>
-  <div class="hero-ctas" style="justify-content:center">
-    <a class="btn btn-solid" href="portfolio.html">See the solutions</a>
-    <a class="btn btn-gold" href="contact.html">Request a demo</a>
+  <div class="cta-act">
+    <a class="btn-t" href="/contact.html">Request a demo</a>
+    <a class="btn-o" href="/portfolio.html">See the solutions</a>
   </div>
-</section>
-
+</div></section>
 </main>
-<footer>
-  <div class="foot">
-    <div>
-      <a class="logo" href="/" style="margin-bottom:.8rem;display:inline-block">Celesium<em>AI</em></a>
-      <p>AI platforms for regulated industries. Every answer comes with the rule behind it.</p>
-    </div>
-    <div>
-      <h4>Solutions</h4>
-      <a href="portfolio.html">Revenue Integrity</a><a href="portfolio.html">AML / BSA</a><a href="portfolio.html">Trade Compliance</a><a href="portfolio.html">Litigation &amp; eDiscovery</a><a href="portfolio.html">ESG Reporting</a>
-    </div>
-    <div>
-      <h4>Studio</h4>
-      <a href="approach.html">How it works</a><a href="security.html">Security &amp; trust</a><a href="leadership.html">Leadership</a><a href="contact.html">Contact</a>
-    </div>
-    <div>
-      <h4>Houston, TX</h4>
-      <p>6222 Richmond, Ste 170<br>Houston, TX 77057</p>
-      <a href="mailto:info@celesium.ai">info@celesium.ai</a>
-    </div>
-  </div>
-  <div class="foot-base">
-    <span>© 2026 CelesiumAI LLC · All rights reserved</span>
-    <a href="#top" style="color:inherit">Back to top ↑</a>
-  </div>
-</footer>
+
+<footer><div><div class="ft-logo">Celesium<span>AI</span></div><div class="ft-addr">6222 Richmond, Ste 170<br>Houston, TX 77057<br><a href="mailto:info@celesium.ai">info@celesium.ai</a></div></div><div class="ft-r"><div class="ft-links"><a href="/portfolio.html">Solutions</a><a href="/approach.html">How it works</a><a href="/security.html">Security</a><a href="/leadership.html">Leadership</a><a href="/contact.html">Contact</a></div><div class="ft-copy">© 2026 CelesiumAI LLC</div></div></footer>
 <script>
-const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
-function countUp(el){
-  const target=+el.dataset.n, dur=Math.min(900,300+target*3);
-  if(reduced){el.textContent=target;return}
-  const t0=performance.now();
-  function step(t){const p=Math.min(1,(t-t0)/dur),e=1-Math.pow(1-p,3);
-    el.textContent=Math.round(target*e); if(p<1)requestAnimationFrame(step);}
-  requestAnimationFrame(step);
-}
-const cio=new IntersectionObserver(es=>es.forEach(e=>{
-  if(e.isIntersecting){countUp(e.target);cio.unobserve(e.target)}}),{threshold:.5});
-document.querySelectorAll('.cnt').forEach(el=>cio.observe(el));
 const io=new IntersectionObserver(es=>es.forEach(e=>{
-  if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
-document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+  if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rev').forEach(el=>io.observe(el));
 </script>
 </body>
 </html>
